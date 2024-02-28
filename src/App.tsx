@@ -1,25 +1,17 @@
 import React from 'react';
-import logo from './logo.svg';
-import './App.css';
+import { Route, BrowserRouter, Routes } from 'react-router-dom';
+import GlobalFont from './styles/GlobalFont';
+import Analysis from './pages/analysis/Analysis'
 
 function App() {
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.tsx</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
+    <BrowserRouter>
+      <GlobalFont/>
+      <Routes>
+        <Route path='/' element={<div></div>}></Route>
+        <Route path='/analysis' element={<Analysis/>}></Route>
+      </Routes>
+    </BrowserRouter>
   );
 }
 

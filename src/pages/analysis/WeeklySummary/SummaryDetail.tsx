@@ -1,6 +1,7 @@
 import React from "react";
 import styled from "styled-components";
 import AnalysisNullComponent from "../../../components/AnalysisNullComponent";
+import SummaryItemsComponent from "./SummaryItemsComponent";
 
 export interface nullVariable {
   marginTop: number;
@@ -25,7 +26,8 @@ const DetailComponent = styled.div`
 function SummaryDetail() {
   return (
     <DetailComponent>
-      <AnalysisNullComponent param={PARAMS} />
+      {/* <AnalysisNullComponent param={PARAMS} /> */}
+      <SummaryItemsComponent/>
     </DetailComponent>
   )
 }

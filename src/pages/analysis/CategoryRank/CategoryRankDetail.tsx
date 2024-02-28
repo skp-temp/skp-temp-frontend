@@ -54,9 +54,6 @@ const CategoryRank2: categoryInfo[] = [
     categoryCount: 0
   }
 ]
-// const CategoryRank2: categoryInfo[] = [
-//   'happiness', 'study', 'hustle', 'pet'
-// ]
 
 const DetailComponent = styled.div`
   background: white;

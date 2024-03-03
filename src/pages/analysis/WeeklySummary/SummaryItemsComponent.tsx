@@ -1,9 +1,11 @@
 import React from "react";
 import styled from "styled-components";
+import SummaryItem from "./SummaryItem";
 
 const ItemsComponent = styled.div``
 const DaysText = styled.div`
   display: flex;
+  justify-content: space-around;
   width: auto;
   height: auto;
   padding-left: 80px;
@@ -18,7 +20,6 @@ const DaysTextItem = styled.div<{color: string}>`
   font-family: "PretendardBold";
   line-height: 14px;
   word-wrap: break-word;
-  margin-right: 8px;
 `
 
 function SummaryItemsComponent() {
@@ -35,7 +36,7 @@ function SummaryItemsComponent() {
   return (
     <ItemsComponent>
       <DaysText>{week.map((i, idx) => <DaysTextItem key={idx} color={getNowDayTrue(idx) ? '#007AFF' : '#B1B1BB'}>{i}</DaysTextItem>)}</DaysText>
-
+      <SummaryItem/>
     </ItemsComponent>
   )
 }

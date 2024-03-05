@@ -7,7 +7,7 @@ function EmotionRank() {
   return (
     <>
       <EmotionRankHeader/>
-      <EmotionRankDetail/>
+        <EmotionRankDetail/>
       <ComponentsPadding/>
     </>
   )

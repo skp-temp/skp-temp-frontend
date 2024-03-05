@@ -30,8 +30,8 @@ const SummaryResult = styled.div`
   height: auto;
 `
 
-const ResultItem = styled.div<{ bool : string }>`
-  background-image: url('images/analysis/CategoryEmotion${props => props.bool}.png');
+const ResultItem = styled.div<{ $bool : string }>`
+  background-image: url('images/analysis/CategoryEmotion${props => props.$bool}.png');
   background-size: cover;
   display: flex;
   justify-content: center;
@@ -47,7 +47,7 @@ const SummaryItem = () => {
     <ItemComponent>
       <SummaryTitle>매일 깃허브 남</SummaryTitle>
       <SummaryResult>
-        {tempList.map((i, idx) => <ResultItem bool={i ? '' : 'Null'} key={idx}/>)}
+        {tempList.map((i, idx) => <ResultItem $bool={i ? '' : 'Null'} key={idx}/>)}
       </SummaryResult>
     </ItemComponent>
   )

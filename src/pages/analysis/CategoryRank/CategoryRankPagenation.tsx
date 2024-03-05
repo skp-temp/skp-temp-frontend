@@ -1,8 +1,10 @@
-import React, {useState} from "react";
+import React from "react";
 import styled from "styled-components";
 
 type propsType = {
-  handlePageNum : () => void;
+  handleslidePrev : () => void;
+  handleslideNext : () => void;
+  pageNum : number;
 }
 
 const Pagenation = styled.div`
@@ -39,26 +41,15 @@ const ArrowRightImage = styled.div<{$isEnd: string}>`
 
 function CategoryRankPagenation(props : propsType) {
 
-  const [pageNum, setPageNum] = useState<number>(1)
-
   const endList : string[] = ['End', '', 'End']
-
-  const handlePageNum = () => {
-    props.handlePageNum();
-    if (pageNum === 1) {
-      setPageNum(2);
-    } else {
-      setPageNum(1);
-    }
-  }
 
   return (
     <Pagenation>
-      <ArrowLeftImage $isEnd={endList[pageNum-1]} onClick={handlePageNum}/>
+      <ArrowLeftImage $isEnd={endList[props.pageNum]} onClick={props.handleslidePrev}/>
       <PagenationText>
         1-2
       </PagenationText>
-      <ArrowRightImage $isEnd={endList[pageNum]} onClick={handlePageNum}/>
+      <ArrowRightImage $isEnd={endList[props.pageNum + 1]} onClick={props.handleslideNext}/>
     </Pagenation>
   )
 }

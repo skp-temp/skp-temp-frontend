@@ -10,10 +10,10 @@ const DaysText = styled.div`
   height: auto;
   padding-left: 80px;
 `
-const DaysTextItem = styled.div<{color: string}>`
+const DaysTextItem = styled.div<{ $color: string }>`
   display: flex;
   justify-content: center;
-  color: ${prop => prop.color};
+  color: ${prop => prop.$color};
   width: 24px;
   height: auto;
   font-size: 14px;
@@ -35,7 +35,7 @@ function SummaryItemsComponent() {
 
   return (
     <ItemsComponent>
-      <DaysText>{week.map((i, idx) => <DaysTextItem key={idx} color={getNowDayTrue(idx) ? '#007AFF' : '#B1B1BB'}>{i}</DaysTextItem>)}</DaysText>
+      <DaysText>{week.map((i, idx) => <DaysTextItem key={idx} $color={getNowDayTrue(idx) ? '#007AFF' : '#B1B1BB'}>{i}</DaysTextItem>)}</DaysText>
       <SummaryItem/>
     </ItemsComponent>
   )

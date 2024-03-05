@@ -1,5 +1,8 @@
 import React, { useState } from "react";
 import styled from "styled-components";
+import { Swiper, SwiperSlide } from "swiper/react";
+import { SwiperClass } from "swiper/react";
+import 'swiper/css';
 import CategoryRankItem from "./CategoryRankItem";
 import CategoryRankPagenation from "./CategoryRankPagenation";
 
@@ -65,24 +68,32 @@ const DetailComponent = styled.div`
 
 function CategoryRankDetail() {
 
-  const [pageNum, setPageNum] = useState<number>(1);
+  const [swiperIndex, setSwiperIndex] = useState(0);
+  const [swiper, setSwiper] = useState<SwiperClass>();
 
-  const handlePageNum = () => {
-    if (pageNum === 1) {
-      setPageNum(2);
-    } else {
-      setPageNum(1);
-    }
-  };
+  const handlePrev = () => {
+    swiper?.slidePrev()
+  }
+  const handleNext = () => {
+    swiper?.slideNext()
+  }
 
   return (
-    <DetailComponent>
-      {pageNum === 1
-      ? CategoryRank1.map(categoryInfo => <CategoryRankItem key={categoryInfo.categoryName} category={categoryInfo}/>)
-      : CategoryRank2.map(categoryInfo => <CategoryRankItem key={categoryInfo.categoryName} category={categoryInfo}/>)
-      }
-      <CategoryRankPagenation handlePageNum = {handlePageNum} />
-    </DetailComponent>
+  <DetailComponent>
+    <Swiper
+        slidesPerView={1}
+        onActiveIndexChange={(e : SwiperClass)=>setSwiperIndex(e.realIndex)}
+        onSwiper={(e : SwiperClass) => {setSwiper(e)}}
+      >
+      <SwiperSlide>
+        {CategoryRank1.map(categoryInfo => <CategoryRankItem key={categoryInfo.categoryName} category={categoryInfo}/>)}
+      </SwiperSlide>
+      <SwiperSlide>
+        {CategoryRank2.map(categoryInfo => <CategoryRankItem key={categoryInfo.categoryName} category={categoryInfo}/>)}
+      </SwiperSlide>
+    </Swiper>
+    <CategoryRankPagenation handleslidePrev = {handlePrev} handleslideNext = {handleNext} pageNum={swiperIndex} />
+  </DetailComponent>
   )
 }
 

@@ -1,5 +1,14 @@
 import React from "react";
-import styled from "styled-components";
+import styled, { keyframes } from "styled-components";
+
+const barChange = keyframes`
+  0% {
+    width: 0;
+  }
+  100% {
+    width: 100%;
+  }
+`
 
 const CategpryGraph = styled.div<{$width:number}>`
   width: ${props => props.$width}%;
@@ -7,15 +16,14 @@ const CategpryGraph = styled.div<{$width:number}>`
   height: 24px;
   display: flex;
   align-items: center;
-  transition: 1s;
 `
 
 const GraphItem = styled.div<{$color:number}>`
-  width: 100%;
   height: 14px;
   border-radius: 20px;
   background-color: #007AFF;
   opacity: ${props => props.$color};
+  animation: ${barChange} 1s 0s forwards;
 `
 
 function CategoryRankItemGraph(props: {width:number, color:number}) {

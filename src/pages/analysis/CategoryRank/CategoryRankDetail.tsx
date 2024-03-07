@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React, { useState, useEffect } from "react";
 import styled from "styled-components";
 import { Swiper, SwiperSlide } from "swiper/react";
 import { SwiperClass } from "swiper/react";
@@ -7,6 +7,7 @@ import CategoryRankItem from "./CategoryRankItem";
 import CategoryRankPagenation from "./CategoryRankPagenation";
 
 export interface categoryInfo {
+  rank: number;
   categoryName: string;
   categoryNameKr: string;
   categoryCount: number;
@@ -14,44 +15,52 @@ export interface categoryInfo {
 
 const CategoryRank1: categoryInfo[] = [
   { 
+    rank: 1,
     categoryName: 'workout',
     categoryNameKr: '운동',
-    categoryCount: 0
+    categoryCount: 38
   }, 
   { 
+    rank: 2,
     categoryName: 'money',
     categoryNameKr: '금전',
-    categoryCount: 0
+    categoryCount: 22
   },
   { 
+    rank: 3,
     categoryName: 'diet',
     categoryNameKr: '식습관',
-    categoryCount: 0
+    categoryCount: 12
   },
   { 
+    rank: 4,
     categoryName: 'beauty',
     categoryNameKr: '뷰티',
-    categoryCount: 0
+    categoryCount: 6
   }
 ]
 
 const CategoryRank2: categoryInfo[] = [
   { 
+    rank: 5,
     categoryName: 'happiness',
     categoryNameKr: '행복',
-    categoryCount: 0
+    categoryCount: 3
   }, 
   { 
+    rank: 6,
     categoryName: 'study',
     categoryNameKr: '공부',
-    categoryCount: 0
+    categoryCount: 3
   },
   { 
+    rank: 7,
     categoryName: 'hustle',
     categoryNameKr: '갓생',
-    categoryCount: 0
+    categoryCount: 2
   },
   { 
+    rank: 8,
     categoryName: 'pet',
     categoryNameKr: '반려',
     categoryCount: 0
@@ -70,6 +79,7 @@ function CategoryRankDetail() {
 
   const [swiperIndex, setSwiperIndex] = useState(0);
   const [swiper, setSwiper] = useState<SwiperClass>();
+  const [maxCount, setMaxCount] = useState<number>(0);
 
   const handlePrev = () => {
     swiper?.slidePrev()
@@ -77,6 +87,13 @@ function CategoryRankDetail() {
   const handleNext = () => {
     swiper?.slideNext()
   }
+
+  useEffect(() => {
+    let result : number = 0
+    CategoryRank1.map(i => result = Math.max(i.categoryCount, result));
+    CategoryRank2.map(i => result = Math.max(i.categoryCount, result));
+    setMaxCount(result);
+  }, [])
 
   return (
   <DetailComponent>
@@ -86,10 +103,10 @@ function CategoryRankDetail() {
         onSwiper={(e : SwiperClass) => {setSwiper(e)}}
       >
       <SwiperSlide>
-        {CategoryRank1.map(categoryInfo => <CategoryRankItem key={categoryInfo.categoryName} category={categoryInfo}/>)}
+        {CategoryRank1.map(categoryInfo => <CategoryRankItem key={categoryInfo.categoryName} category={categoryInfo} maxCount={maxCount}/>)}
       </SwiperSlide>
       <SwiperSlide>
-        {CategoryRank2.map(categoryInfo => <CategoryRankItem key={categoryInfo.categoryName} category={categoryInfo}/>)}
+        {CategoryRank2.map(categoryInfo => <CategoryRankItem key={categoryInfo.categoryName} category={categoryInfo} maxCount={maxCount}/>)}
       </SwiperSlide>
     </Swiper>
     <CategoryRankPagenation handleslidePrev = {handlePrev} handleslideNext = {handleNext} pageNum={swiperIndex} />

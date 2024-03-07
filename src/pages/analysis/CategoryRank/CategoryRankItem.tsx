@@ -1,6 +1,7 @@
 import React from "react";
 import styled from "styled-components";
 import { categoryInfo } from "./CategoryRankDetail";
+import CategoryRankItemGraph from "./CategoryRankItemGraph";
 
 const ItemComponent =  styled.div`
   width: 100%;
@@ -21,20 +22,26 @@ const CategoryText = styled.div`
   font-size: 14px;
   font-family: "PretendardRegular";
 `
-const CategoryGraph = styled.div`
-`
+
 const CategoryCount = styled.div`
   font-size: 14px;
   font-family: "PretendardRegular";
   margin-left: 8px;
 `
 
-function CategoryRankItem(props: {category:categoryInfo}) {
+function CategoryRankItem(props: {category:categoryInfo, maxCount:number}) {
+
+  const colors : number[] = [1, 0.8, 0.6, 0.4, 0.3, 0.2, 0.15, 0.1]
+  const getWidth = () => {
+    let result : number = props.category.categoryCount / props.maxCount * 50
+    return result
+  }
+
   return (
     <ItemComponent>
       <CategoryImage $categoryName={props.category.categoryName} />
       <CategoryText>{props.category.categoryNameKr}</CategoryText>
-      <CategoryGraph />
+      <CategoryRankItemGraph width={getWidth()} color={colors[props.category.rank - 1]} />
       <CategoryCount>{props.category.categoryCount}</CategoryCount>
     </ItemComponent>
   )

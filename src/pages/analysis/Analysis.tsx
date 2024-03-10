@@ -4,7 +4,7 @@ import AnalysisHeader from "./AnalysisHeader/AnalysisHeader";
 import WeeklySummary from "./WeeklySummary/WeeklySummary";
 import CategoryRank from "./CategoryRank/CategoryRank";
 import EmotionRank from "./EmotionRank/EmotionRank";
-import CheeringMe from "./CheeringMe.tsx/CheeringMe";
+import CheeringMe from "./CheeringMe/CheeringMe";
 import CheeringTo from "./CheeringTo/CheeringTo";
 
 const AnalysisPage = styled.div`

@@ -1,13 +1,13 @@
 import React from "react";
 import CheeringMeHeader from "./CheeringMeHeader";
-import CheeringMeDetail from "./CheeringMeDetail";
+import CheeringMeComponent from "./CheeringMeComponent";
 import ComponentsPadding from "../../../components/ComponentsPadding";
 
 function CheeringMe() {
   return (
     <>
       <CheeringMeHeader/>
-      <CheeringMeDetail/>
+      <CheeringMeComponent/>
       <ComponentsPadding/>
     </>
   )

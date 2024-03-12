@@ -6,6 +6,7 @@ import CategoryRank from "./CategoryRank/CategoryRank";
 import EmotionRank from "./EmotionRank/EmotionRank";
 import CheeringMe from "./CheeringMe/CheeringMe";
 import CheeringTo from "./CheeringTo/CheeringTo";
+import 'swiper/css';
 
 const AnalysisPage = styled.div`
   padding: 0 16px;

@@ -1,6 +1,6 @@
 import React from "react";
 import CheeringToHeader from "./CheeringToHeader";
-import CheeringToDetail from "./CheeringToDetail";
+import CheeringToDetail from "./CheeringToComponent";
 import ComponentsPadding from "../../../components/common/ComponentsPadding";
 
 function CheeringTo() {

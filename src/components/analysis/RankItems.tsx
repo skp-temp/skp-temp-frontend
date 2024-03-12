@@ -2,10 +2,10 @@ import React from "react";
 import styled from "styled-components";
 
 export interface RankItemParam {
-  imageUrl: string;
-  name: string;
+  imageUrl?: string;
+  name?: string;
   rank: number;
-  counts: number;
+  counts?: number;
 };
 
 const RankItemComponent = styled.div`
@@ -38,16 +38,25 @@ const ItemRank = styled.div<{$bg_color: string, $color: string}>`
   margin-right: 8px;
 `
 
-const ItemImage = styled.div`
-  background-image: url('images/analysis/CategoryEmotion.png');
+const ItemImage = styled.div<{$imageUrl: string}>`
+  background-image: url('${props => props.$imageUrl}');
   background-size: cover;
   width: 40px;
   height: 40px;
   border-radius: 9999px;
 `
 
+const ItemImageNull = styled.div`
+  background-image: url('images/analysis/nullImage.svg');
+  background-size: cover;
+  width: 24px;
+  height: 24px;
+  margin: 16px;
+`
+
 const ItemName = styled.div`
   color: #1C1C1E;
+  min-width: 41px;
   font-size: 16px;
   font-family: "PretendardRegular";
   line-height: 24;
@@ -71,7 +80,10 @@ function CheeringMeItem(props: {itemInfo: RankItemParam}) {
           $color={props.itemInfo.rank === 1 ? '#007AFF' : '#1C1C1E'}
           >{props.itemInfo.rank}
         </ItemRank>
-        <ItemImage />
+        {props.itemInfo.imageUrl
+        ? <ItemImage $imageUrl={props.itemInfo.imageUrl ? 'images/analysis/tmp.png' : 'images/analysis/nullImage.svg'} />
+        : <ItemImageNull />
+        }
         <ItemName>{props.itemInfo.name}</ItemName>
       </ItemInfo>
       <ItemScore $color={props.itemInfo.rank === 1 ? '#007AFF' : '#1C1C1E'}>{props.itemInfo.counts}</ItemScore>

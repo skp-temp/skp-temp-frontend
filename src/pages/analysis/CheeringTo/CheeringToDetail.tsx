@@ -1,27 +1,16 @@
 import React from "react";
 import styled from "styled-components";
-import AnalysisNullComponent from "../../../components/analysis/AnalysisNullComponent";
-import { nullVariable } from "../WeeklySummary/SummaryDetail";
+import RankItem from "../../../components/analysis/RankItems"
+import { RankItemParam } from "../../../components/analysis/RankItems";
 
-const PARAMS: nullVariable = {
-  marginTop: 0,
-  marginBottom: 22,
-  text: '아직 친구가 없어요.'
-}
-
-const DetailComponent = styled.div`
-  background: white;
-  width: auto;
-  height: auto;
-  border-radius: 16px;
-  padding: 28px 22px 16px 22px;
+const CheeringMeDetailComponent = styled.div`
 `
 
-function CheeringToDetail() {
+function CheeringToDetail(props: {rankItem: RankItemParam[]}) {
   return (
-    <DetailComponent>
-      <AnalysisNullComponent param={PARAMS} />
-    </DetailComponent>
+    <CheeringMeDetailComponent>
+      {props.rankItem.map((i, idx) => <RankItem key={idx} itemInfo={i} />)}
+    </CheeringMeDetailComponent>
   )
 }
 

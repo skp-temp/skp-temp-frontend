@@ -2,9 +2,9 @@ import React, { useState, useEffect } from "react";
 import styled from "styled-components";
 import { Swiper, SwiperSlide } from "swiper/react";
 import { SwiperClass } from "swiper/react";
-import 'swiper/css';
 import CategoryRankItem from "./CategoryRankItem";
 import CategoryRankPagenation from "./CategoryRankPagenation";
+import AnalysisPagenation from "../../../components/analysis/AnalysisPagenation";
 
 export interface categoryInfo {
   rank: number;
@@ -109,7 +109,7 @@ function CategoryRankDetail() {
         {CategoryRank2.map(categoryInfo => <CategoryRankItem key={categoryInfo.categoryName} category={categoryInfo} maxCount={maxCount}/>)}
       </SwiperSlide>
     </Swiper>
-    <CategoryRankPagenation handleslidePrev = {handlePrev} handleslideNext = {handleNext} pageNum={swiperIndex} />
+    <AnalysisPagenation handleslidePrev = {handlePrev} handleslideNext = {handleNext} nowPageNum={swiperIndex} maxPageNum={2} />
   </DetailComponent>
   )
 }

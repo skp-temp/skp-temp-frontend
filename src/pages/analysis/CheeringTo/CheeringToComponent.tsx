@@ -2,9 +2,9 @@ import React, { useState } from "react";
 import styled from "styled-components";
 import { Swiper, SwiperSlide } from "swiper/react";
 import { SwiperClass } from "swiper/react";
-import AnalysisNullComponent from "../../../components/analysis/AnalysisNullComponent";
-import CheeringMeDetail from "./CheeringMeDetail";
+import CheeringToDetail from "./CheeringToDetail";
 import AnalysisPagenation from "../../../components/analysis/AnalysisPagenation";
+import AnalysisNullComponent from "../../../components/analysis/AnalysisNullComponent";
 import { nullVariable } from "../WeeklySummary/SummaryDetail";
 import { RankItemParam } from "../../../components/analysis/RankItems";
 
@@ -12,7 +12,7 @@ const PARAMS: nullVariable = {
   marginTop: 0,
   marginBottom: 22,
   text: '아직 친구가 없어요.'
-} 
+}
 
 const DetailComponent = styled.div`
   background: white;
@@ -82,7 +82,7 @@ const tmpList : RankItemParam[][] = [
   ]
 ]
 
-function CheeringMeComponent() {
+function CheeringToComponent() {
 
   const [swiperIndex, setSwiperIndex] = useState(0);
   const [swiper, setSwiper] = useState<SwiperClass>();
@@ -104,7 +104,7 @@ function CheeringMeComponent() {
       >
         {tmpList.map((i, idx) => 
           (<SwiperSlide>
-            <CheeringMeDetail key={idx} rankItem={i} />
+            <CheeringToDetail key={idx} rankItem={i} />
           </SwiperSlide>))
         }
       </Swiper>
@@ -113,4 +113,4 @@ function CheeringMeComponent() {
   )
 }
 
-export default CheeringMeComponent;
+export default CheeringToComponent;

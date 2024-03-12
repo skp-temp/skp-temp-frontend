@@ -1,9 +1,9 @@
 import React from "react";
 import styled from "styled-components";
-import AnalysisNullComponent from "../../../components/AnalysisNullComponent";
+import AnalysisNullComponent from "../../../components/analysis/AnalysisNullComponent";
 import CheeringMeDetail from "./CheeringMeDetail";
 import { nullVariable } from "../WeeklySummary/SummaryDetail";
-import { RankItemParam } from "../../../components/RankItems";
+import { RankItemParam } from "../../../components/analysis/RankItems";
 
 const PARAMS: nullVariable = {
   marginTop: 0,

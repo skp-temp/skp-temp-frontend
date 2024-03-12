@@ -1,7 +1,7 @@
 import React from "react";
 import styled from "styled-components";
-import NoDataCharacter from "../assets/images/analysis/NoDataCharacter.png"
-import { nullVariable } from "../pages/analysis/WeeklySummary/SummaryDetail";
+import NoDataCharacter from "../../assets/images/analysis/NoDataCharacter.png"
+import { nullVariable } from "../../pages/analysis/WeeklySummary/SummaryDetail";
 
 interface nullComponentProps {
   param: nullVariable;

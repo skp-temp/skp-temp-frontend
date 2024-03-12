@@ -1,6 +1,6 @@
 import React from "react";
 import styled from "styled-components";
-import AnalysisNullComponent from "../../../components/AnalysisNullComponent";
+import AnalysisNullComponent from "../../../components/analysis/AnalysisNullComponent";
 import { nullVariable } from "../WeeklySummary/SummaryDetail";
 
 const PARAMS: nullVariable = {

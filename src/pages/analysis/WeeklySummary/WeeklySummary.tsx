@@ -1,7 +1,7 @@
 import React from "react";
 import SummaryHeader from "./SummaryHeader";
 import SummaryDetail from "./SummaryDetail";
-import ComponentsPadding from "../../../components/ComponentsPadding";
+import ComponentsPadding from "../../../components/common/ComponentsPadding";
 
 function WeeklySummary() {
   return (

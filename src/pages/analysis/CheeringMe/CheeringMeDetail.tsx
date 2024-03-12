@@ -1,7 +1,7 @@
 import React from "react";
 import styled from "styled-components";
-import RankItem from "../../../components/RankItems"
-import { RankItemParam } from "../../../components/RankItems";
+import RankItem from "../../../components/analysis/RankItems"
+import { RankItemParam } from "../../../components/analysis/RankItems";
 
 const CheeringMeDetailComponent = styled.div`
 `

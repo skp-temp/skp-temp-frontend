@@ -1,6 +1,6 @@
 import React from "react";
 import styled from "styled-components";
-import ComponentsPadding from "../../../components/ComponentsPadding";
+import ComponentsPadding from "../../../components/common/ComponentsPadding";
 import AnalysisCharacter from "../../../assets/images/analysis/AnalysisCharacter.png"
 
 const HeaderComponent = styled.div`

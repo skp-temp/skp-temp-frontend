@@ -12,9 +12,10 @@ const HEADER_STRING: string = '부적을 완성한 친구';
 
 const CompleteFriendsComponent = styled.div`
   padding: 16px;
+  margin-bottom: 4px;
 `
 
-const CompleteFriendsItems = styled.div`
+const ItemsComponent = styled.div`
   display: flex;
   margin-top: 12px;
   -ms-overflow-style: none;
@@ -27,11 +28,11 @@ function RecentlyCompleteFriends(props: {item: CompleteFriendsPropsType[]}) {
   return (
     <CompleteFriendsComponent>
       <FriendsMainHeader headerString={HEADER_STRING} counts={props.item.length}/>
-      <CompleteFriendsItems>
+      <ItemsComponent>
         {props.item.map((i, idx) =>(
           <RecentlyCompleteFriendsItem key={idx} name={i.name} imageUrl={i.imageUrl} />
         ))}
-      </CompleteFriendsItems>
+      </ItemsComponent>
     </CompleteFriendsComponent>
   )
 }

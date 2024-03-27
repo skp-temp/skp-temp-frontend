@@ -1,6 +1,6 @@
 # 실행
 
-yarn i
+yarn add
 yarn start
 
 # 기술 스택
@@ -8,4 +8,4 @@ yarn start
 1. TypeScript (4.9.5)
 2. React.js (18.2.0)
 3. React-route-dom (6.20.1)
-4.
+4. 

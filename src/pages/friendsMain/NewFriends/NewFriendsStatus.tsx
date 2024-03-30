@@ -4,6 +4,7 @@ import miniBubble from '../../../assets/images/friendsMain/miniBubble.svg';
 import bigBubble from '../../../assets/images/friendsMain/bigBubble.svg';
 import leftBubble from '../../../assets/images/friendsMain/leftBubble.svg';
 import rightBubble from '../../../assets/images/friendsMain/rightBubble.svg';
+import { GRAY_COLOR } from '../../../constants';
 
 const NewFriendsStatusComponent = styled.div`
   display: flex;
@@ -44,7 +45,7 @@ const RightBubble = styled.div`
 const BubbleComponent = styled.div`
   display: flex;
   align-items: center;
-  background-color: #f6f6fa;
+  background-color: ${GRAY_COLOR.GRAY_150};
   height: 28px;
 `;
 

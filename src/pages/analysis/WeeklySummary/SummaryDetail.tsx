@@ -1,7 +1,8 @@
-import React from "react";
-import styled from "styled-components";
-import AnalysisNullComponent from "../../../components/analysis/AnalysisNullComponent";
-import SummaryItemsComponent from "./SummaryItemsComponent";
+import React from 'react';
+import styled from 'styled-components';
+import AnalysisNullComponent from '../../../components/analysis/AnalysisNullComponent';
+import SummaryItemsComponent from './SummaryItemsComponent';
+import { GRAY_COLOR } from '../../../constants';
 
 export interface nullVariable {
   marginTop: number;
@@ -12,24 +13,24 @@ export interface nullVariable {
 const PARAMS: nullVariable = {
   marginTop: 12,
   marginBottom: 22,
-  text: '만들고 있는 부적이 없어요.'
-} 
+  text: '만들고 있는 부적이 없어요.',
+};
 
 const DetailComponent = styled.div`
-  background: white;
+  background: ${GRAY_COLOR.WHITE};
   width: auto;
   height: auto;
   border-radius: 16px;
   padding: 28px 15px 34px 15px;
-`
+`;
 
 function SummaryDetail() {
   return (
     <DetailComponent>
       {/* <AnalysisNullComponent param={PARAMS} /> */}
-      <SummaryItemsComponent/>
+      <SummaryItemsComponent />
     </DetailComponent>
-  )
+  );
 }
 
 export default SummaryDetail;

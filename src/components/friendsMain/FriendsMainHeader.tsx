@@ -1,5 +1,6 @@
-import React from "react";
-import styled from "styled-components";
+import React from 'react';
+import styled from 'styled-components';
+import { SEMANTIC_COLOR, GRAY_COLOR } from '../../constants';
 
 interface PropsType {
   headerString: string;
@@ -8,26 +9,26 @@ interface PropsType {
 
 const HeaderComponent = styled.div`
   display: flex;
-`
+`;
 
 const HeaderString = styled.div`
   display: inline-block;
-  color: #636366;
+  color: ${GRAY_COLOR.GRAY_600};
   font-size: 12px;
-  font-family: "PretendardRegular";
+  font-family: 'PretendardRegular';
   line-height: 12px;
   word-wrap: break-word;
   margin-right: 4px;
-`
+`;
 
 const Counts = styled.div`
   display: inline-block;
-  color: #007AFF;
+  color: ${SEMANTIC_COLOR.BLUE};
   font-size: 12px;
-  font-family: "PretendardRegular";
+  font-family: 'PretendardRegular';
   line-height: 12px;
   word-wrap: break-word;
-`
+`;
 
 function FriendsMainHeader(props: PropsType) {
   return (
@@ -35,7 +36,7 @@ function FriendsMainHeader(props: PropsType) {
       <HeaderString>{props.headerString}</HeaderString>
       <Counts>{props.counts}</Counts>
     </HeaderComponent>
-  )
+  );
 }
 
 export default FriendsMainHeader;

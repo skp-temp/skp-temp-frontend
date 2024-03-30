@@ -1,13 +1,14 @@
 import React from 'react';
 import styled from 'styled-components';
 import tmpImage from '../../../../assets/images/friendsMain/tmpImage.png';
+import { GRAY_COLOR } from '../../../../constants';
 
 const FriendsAlbumItemComponent = styled.div`
   display: flex;
   justify-content: center;
   width: 140px;
   height: 156px;
-  background-color: #f6f6fa;
+  background-color: ${GRAY_COLOR.GRAY_150};
   border-radius: 16px;
   padding: 52px 9px 12px 9px;
   margin: 16px 0px 4px 0px;
@@ -41,7 +42,7 @@ const NameComponent = styled.div`
 `;
 
 const BadgeComponent = styled.div`
-  color: #8e8e93;
+  color: ${GRAY_COLOR.GRAY_500};
   font-size: 12px;
   font-family: 'PretendardRegular';
   line-height: 12px;

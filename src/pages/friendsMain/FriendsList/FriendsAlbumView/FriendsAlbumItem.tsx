@@ -33,7 +33,7 @@ const ImageComponent = styled.div`
 `;
 
 const NameComponent = styled.div`
-  color: #1e1e1e;
+  color: ${GRAY_COLOR.GRAY_900};
   font-size: 14px;
   font-family: 'PretendardRegular';
   line-height: 14px;

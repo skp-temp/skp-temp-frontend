@@ -1,5 +1,6 @@
 import React, { useState, useMemo } from 'react';
 import styled from 'styled-components';
+import { useInviteInputData } from '../../store';
 import inputEmpty from '../../assets/images/friendsInvite/inputEmpty.svg';
 import inputActive from '../../assets/images/friendsInvite/inputActive.svg';
 import inputDisable from '../../assets/images/friendsInvite/inputDisable.svg';
@@ -47,7 +48,7 @@ const CloseButton = styled.div`
 `;
 
 function FriendsInviteSearch() {
-  const [inputData, setInputData] = useState<string>('');
+  const { inputData, setInputData } = useInviteInputData();
   const [isFocus, setIsFocus] = useState<boolean>(false);
 
   const onChange = (e: React.ChangeEvent<HTMLInputElement>) => {

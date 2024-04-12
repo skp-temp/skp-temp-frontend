@@ -7,7 +7,6 @@ const HEADER_STRING = '친구의 사용자 코드가 필요해요.';
 
 const FriendsInviteComponent = styled.div`
   padding-top: 32px;
-  height: 500px;
 `;
 
 function FriendsInvite() {

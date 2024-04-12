@@ -9,11 +9,11 @@ import { GRAY_COLOR, SEMANTIC_COLOR } from '../../constants';
 
 const FriendsInviteSearchComponent = styled.div``;
 
-const SearchBox = styled.div<{ inputStatus: string }>`
-  background-image: url(${(props) => props.inputStatus});
+const SearchBox = styled.div<{ $inputStatus: string }>`
+  background-image: url(${(props) => props.$inputStatus});
   background-size: 100% 48px;
   height: 48px;
-  width: ${document.documentElement.clientWidth - 40}px;
+  width: ${document.documentElement.clientWidth - 48}px;
   margin: 12px 24px 0 24px;
   position: absolute;
 `;
@@ -23,7 +23,7 @@ const SearchInput = styled.input`
   position: relative;
   left: 20px;
   top: 12px;
-  height: 16px;
+  height: 20px;
   font-size: 16px;
   font-family: 'PretendardRegular';
   line-height: 16px;
@@ -38,13 +38,14 @@ const SearchInput = styled.input`
   }
 `;
 
-const CloseButton = styled.div`
+const CloseButton = styled.div<{ $isDisplay: string }>`
   background-image: url(${close});
   position: relative;
   left: ${document.documentElement.clientWidth - 80}px;
   bottom: 6px;
   height: 16px;
   width: 16px;
+  display: ${(props) => props.$isDisplay};
 `;
 
 function FriendsInviteSearch() {
@@ -54,7 +55,7 @@ function FriendsInviteSearch() {
   const onChange = (e: React.ChangeEvent<HTMLInputElement>) => {
     setInputData(e.target.value);
   };
-
+  // 포커스(onFocus)되고 빠져나감(onBlur)
   const onFocus = () => {
     setIsFocus(true);
   };
@@ -79,7 +80,7 @@ function FriendsInviteSearch() {
 
   return (
     <FriendsInviteSearchComponent>
-      <SearchBox inputStatus={calInputStatus}>
+      <SearchBox $inputStatus={calInputStatus}>
         <SearchInput
           type="text"
           name="username"
@@ -90,7 +91,10 @@ function FriendsInviteSearch() {
           onFocus={onFocus}
           onBlur={onBlur}
         />
-        <CloseButton onClick={onClearInput} />
+        <CloseButton
+          onClick={onClearInput}
+          $isDisplay={inputData ? 'block' : 'none'}
+        />
       </SearchBox>
     </FriendsInviteSearchComponent>
   );

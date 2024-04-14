@@ -72,7 +72,7 @@ const DetailComponent = styled.div`
   width: auto;
   height: 178px;
   border-radius: 16px;
-  padding: 30px 27px 16px 27px;
+  padding: 30px 0 16px 0;
 `;
 
 function CategoryRankDetail() {

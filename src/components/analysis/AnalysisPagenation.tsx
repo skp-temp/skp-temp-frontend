@@ -28,7 +28,8 @@ const PagenationText = styled.div`
   justify-content: center;
   align-items: center;
   font-size: 12px;
-  font-family: 'PretendardRegular';
+  font-family: 'PretendardMedium';
+  letter-spacing: -0.4px;
   line-weight: 12px;
   word-wrap: 'break-word';
 `;

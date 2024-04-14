@@ -15,7 +15,7 @@ const DetailComponent = styled.div`
   width: auto;
   height: 266px;
   border-radius: 16px;
-  padding: 24px 20px 20px 20px;
+  padding: 24px 20px 34px 20px;
 `;
 
 const DetailItems = styled.div`

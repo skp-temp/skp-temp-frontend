@@ -43,7 +43,6 @@ const CategoryCount = styled.div<{ $color: string }>`
 function CategoryRankItem(props: { category: categoryInfo; maxCount: number }) {
   const getWidth = () => {
     let result: number = (props.category.categoryCount / props.maxCount) * 50;
-    console.log(result, props.category.categoryCount);
     return result;
   };
 

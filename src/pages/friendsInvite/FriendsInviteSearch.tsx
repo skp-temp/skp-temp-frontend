@@ -1,4 +1,4 @@
-import React, { useState, useMemo } from 'react';
+import React, { useState, useMemo, useLayoutEffect } from 'react';
 import styled from 'styled-components';
 import { useInviteInputData } from '../../store';
 import inputEmpty from '../../assets/images/friendsInvite/inputEmpty.svg';
@@ -78,6 +78,17 @@ function FriendsInviteSearch() {
       return inputActive;
     } else return inputEmpty;
   }, [inputData, isFocus]);
+
+  const imgPreload = (imageArray: string[]) => {
+    imageArray.forEach((item) => {
+      let img = new Image();
+      img.src = item;
+    });
+  };
+
+  useLayoutEffect(() => {
+    imgPreload([inputEmpty, inputActive, inputDisable, close]);
+  }, []);
 
   return (
     <FriendsInviteSearchComponent>

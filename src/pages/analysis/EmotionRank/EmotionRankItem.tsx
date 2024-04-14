@@ -37,6 +37,7 @@ const FirstRankImage = styled.div`
   background-size: cover;
   width: 40px;
   height: 39px;
+  margin-bottom: 5px;
 `;
 
 const FirstRankText = styled.div`
@@ -64,6 +65,7 @@ const SecondRankImageComponent = styled.div`
   align-items: center;
   width: 40px;
   height: 38px;
+  margin-bottom: 5px;
 `;
 
 const SecondRankImage = styled.div`

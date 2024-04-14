@@ -24,7 +24,8 @@ const ButtonBox = styled.div<{ $buttonStatus: string }>`
 const ButtonText = styled.div<{ $color: string }>`
   color: ${(props) => props.$color};
   font-size: 16px;
-  font-family: 'PretendardRegular';
+  font-family: 'PretendardMedium';
+  letter-spacing: -0.4px;
   line-height: 16px;
   word-wrap: break-word;
 `;

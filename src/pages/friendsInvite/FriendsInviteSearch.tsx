@@ -25,7 +25,8 @@ const SearchInput = styled.input`
   top: 12px;
   height: 20px;
   font-size: 16px;
-  font-family: 'PretendardRegular';
+  font-family: 'PretendardMedium';
+  letter-spacing: -0.4px;
   line-height: 16px;
   word-wrap: break-word;
   background-color: transparent;

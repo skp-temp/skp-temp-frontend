@@ -12,6 +12,7 @@ const ItemComponent = styled.div`
   display: flex;
   margin-bottom: 14px;
   align-items: center;
+  padding: 0 30px 0 30px;
 `;
 const CategoryImage = styled.div<{ $categoryName: string }>`
   background-image: url('images/analysis/${(props) =>
@@ -26,6 +27,7 @@ const CategoryText = styled.div`
   width: 48px;
   font-size: 14px;
   font-family: 'PretendardMedium';
+  line-height: 14px;
   letter-spacing: -0.4px;
 `;
 
@@ -33,6 +35,7 @@ const CategoryCount = styled.div<{ $color: string }>`
   color: ${(props) => props.$color};
   font-size: 14px;
   font-family: 'PretendardMedium';
+  line-height: 14px;
   letter-spacing: -0.4px;
   margin-left: 8px;
 `;
@@ -40,6 +43,7 @@ const CategoryCount = styled.div<{ $color: string }>`
 function CategoryRankItem(props: { category: categoryInfo; maxCount: number }) {
   const getWidth = () => {
     let result: number = (props.category.categoryCount / props.maxCount) * 50;
+    console.log(result, props.category.categoryCount);
     return result;
   };
 

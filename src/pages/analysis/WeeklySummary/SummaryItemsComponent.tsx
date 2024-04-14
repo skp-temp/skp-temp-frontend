@@ -18,7 +18,7 @@ const DaysTextItem = styled.div<{ $color: string }>`
   width: 24px;
   height: auto;
   font-size: 14px;
-  font-family: 'PretendardBold';
+  font-family: 'PretendardMedium';
   line-height: 14px;
   word-wrap: break-word;
 `;

@@ -2,6 +2,7 @@ import React from 'react';
 import styled from 'styled-components';
 import { categoryInfo } from './CategoryRankDetail';
 import CategoryRankItemGraph from './CategoryRankItemGraph';
+import { GRAY_COLOR, SEMANTIC_COLOR } from '../../../constants';
 
 const OPACITY: number[] = [1, 0.8, 0.6, 0.4, 0.3, 0.2, 0.15, 0.1];
 
@@ -21,14 +22,18 @@ const CategoryImage = styled.div<{ $categoryName: string }>`
   margin-right: 6px;
 `;
 const CategoryText = styled.div`
+  color: ${GRAY_COLOR.GRAY_700};
   width: 48px;
   font-size: 14px;
-  font-family: 'PretendardRegular';
+  font-family: 'PretendardMedium';
+  letter-spacing: -0.4px;
 `;
 
-const CategoryCount = styled.div`
+const CategoryCount = styled.div<{ $color: string }>`
+  color: ${(props) => props.$color};
   font-size: 14px;
-  font-family: 'PretendardRegular';
+  font-family: 'PretendardMedium';
+  letter-spacing: -0.4px;
   margin-left: 8px;
 `;
 
@@ -46,7 +51,13 @@ function CategoryRankItem(props: { category: categoryInfo; maxCount: number }) {
         width={getWidth()}
         color={OPACITY[props.category.rank - 1]}
       />
-      <CategoryCount>{props.category.categoryCount}</CategoryCount>
+      <CategoryCount
+        $color={
+          props.category.rank === 1 ? SEMANTIC_COLOR.BLUE : GRAY_COLOR.GRAY_900
+        }
+      >
+        {props.category.categoryCount}
+      </CategoryCount>
     </ItemComponent>
   );
 }

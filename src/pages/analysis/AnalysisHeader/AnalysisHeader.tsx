@@ -32,7 +32,7 @@ const HeaderTextBox = styled.div`
 const TextTop = styled.div`
   color: ${GRAY_COLOR.GRAY_800};
   font-size: 16px;
-  font-family: 'PretendardRegular';
+  font-family: 'PretendardMedium';
   line-height: 16px;
   letter-spacing: -0.4px;
   word-wrap: break-word;
@@ -57,9 +57,11 @@ const TextLeft = styled.div`
 const TextRight = styled.div`
   color: ${GRAY_COLOR.GRAY_500};
   font-size: 14px;
-  font-family: 'PretendardRegular';
+  font-family: 'PretendardMedium';
+  letter-spacing: -0.4px;
   line-height: 14px;
   word-wrap: break-word;
+  margin-bottom: 4px;
 `;
 
 function AnalysisHeader() {

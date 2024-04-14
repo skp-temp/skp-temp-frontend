@@ -3,7 +3,6 @@ import styled from 'styled-components';
 import { Swiper, SwiperSlide } from 'swiper/react';
 import { SwiperClass } from 'swiper/react';
 import CategoryRankItem from './CategoryRankItem';
-import CategoryRankPagenation from './CategoryRankPagenation';
 import AnalysisPagenation from '../../../components/analysis/AnalysisPagenation';
 import { GRAY_COLOR } from '../../../constants';
 

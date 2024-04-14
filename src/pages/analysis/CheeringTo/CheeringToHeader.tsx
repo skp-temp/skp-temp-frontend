@@ -20,7 +20,7 @@ const HeaderText = styled.div`
 
 const SubText = styled.div`
   color: ${GRAY_COLOR.GRAY_600};
-  font-size: 12px;
+  font-size: 14px;
   font-family: 'PretendardRegular';
   line-height: 20px;
   word-wrap: break-word;

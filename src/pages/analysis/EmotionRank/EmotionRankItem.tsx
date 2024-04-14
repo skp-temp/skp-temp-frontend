@@ -16,7 +16,8 @@ const CategoryName = styled.div`
   justify-content: center;
   align-items: center;
   font-size: 14px;
-  font-family: 'PretendardBold';
+  font-family: 'PretendardMedium';
+  letter-spacing: -0.4px;
   line-height: 14px;
   word-wrap: break-word;
 `;
@@ -44,7 +45,8 @@ const FirstRankText = styled.div`
   align-items: center;
   color: ${SEMANTIC_COLOR.BLUE};
   font-size: 12px;
-  font-family: 'PretendardBold';
+  font-family: 'PretendardMedium';
+  letter-spacing: -0.4px;
   line-height: 12px;
   word-wrap: break-word;
 `;
@@ -76,7 +78,8 @@ const SecondRankText = styled.div`
   justify-content: center;
   align-items: center;
   font-size: 12px;
-  font-family: 'PretendardBold';
+  font-family: 'PretendardMedium';
+  letter-spacing: -0.4px;
   line-height: 12px;
   word-wrap: break-word;
 `;

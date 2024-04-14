@@ -15,12 +15,12 @@ const SearchBox = styled.div<{ $inputStatus: string }>`
   height: 48px;
   width: ${document.documentElement.clientWidth - 48}px;
   margin: 12px 24px 0 24px;
-  position: absolute;
+  position: relative;
 `;
 
 const SearchInput = styled.input`
   color: ${GRAY_COLOR.GRAY_900};
-  position: relative;
+  position: absolute;
   left: 20px;
   top: 14px;
   height: 20px;
@@ -41,9 +41,9 @@ const SearchInput = styled.input`
 
 const CloseButton = styled.div<{ $isDisplay: string }>`
   background-image: url(${close});
-  position: relative;
-  left: ${document.documentElement.clientWidth - 80}px;
-  bottom: 6px;
+  position: absolute;
+  right: 16px;
+  top: 16px;
   height: 16px;
   width: 16px;
   display: ${(props) => props.$isDisplay};

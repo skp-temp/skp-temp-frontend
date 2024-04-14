@@ -10,14 +10,13 @@ const ItemComponent = styled.div`
 
 const SummaryTitle = styled.div`
   display: block;
-  align-items: center;
   color: ${GRAY_COLOR.GRAY_800};
   width: 72px;
   height: 24px;
   margin-right: 8px;
   font-size: 14px;
   font-family: 'PretendardMedium';
-  line-height: 14px;
+  line-height: 24px;
   letter-spacing: -0.4px;
   text-overflow: ellipsis;
   overflow: hidden;

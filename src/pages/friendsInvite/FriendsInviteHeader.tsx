@@ -20,4 +20,4 @@ function FriendsInviteHeader(props: { headerText: string }) {
   );
 }
 
-export default React.memo(FriendsInviteHeader);
+export default FriendsInviteHeader;

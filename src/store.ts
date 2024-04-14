@@ -11,3 +11,15 @@ export const useInviteInputData = create<InviteInputData>((set) => ({
     set((state) => ({ inputData: inputData }));
   },
 }));
+
+interface MessageInputData {
+  inputData: string;
+  setInputData: (inputData: string) => void;
+}
+
+export const useMessageInputData = create<MessageInputData>((set) => ({
+  inputData: '',
+  setInputData: (inputData) => {
+    set((state) => ({ inputData: inputData }));
+  },
+}));

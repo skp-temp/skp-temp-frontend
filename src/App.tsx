@@ -1,19 +1,24 @@
 import React from 'react';
 import { Route, BrowserRouter, Routes } from 'react-router-dom';
-import GlobalFont from './styles/GlobalFont';
-import Analysis from './pages/analysis/Analysis';
-import FriendsMain from './pages/friendsMain/FriendsMain';
-import FriendsInvite from './pages/friendsInvite/FriendsInvite';
+
+const Analysis = React.lazy(() => import('./pages/analysis/Analysis'));
+const FriendsMain = React.lazy(() => import('./pages/friendsMain/FriendsMain'));
+const FriendsInvite = React.lazy(
+  () => import('./pages/friendsInvite/FriendsInvite'),
+);
+const FriendsMessage = React.lazy(
+  () => import('./pages/friendsMessage/FriendsMessage'),
+);
 
 function App() {
   return (
     <BrowserRouter>
-      <GlobalFont />
       <Routes>
         <Route path="/" element={<div></div>}></Route>
         <Route path="/analysis" element={<Analysis />}></Route>
         <Route path="/friendsMain" element={<FriendsMain />}></Route>
         <Route path="/friendsInvite" element={<FriendsInvite />}></Route>
+        <Route path="/friendsMessage" element={<FriendsMessage />}></Route>
       </Routes>
     </BrowserRouter>
   );

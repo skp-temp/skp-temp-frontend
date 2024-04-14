@@ -105,8 +105,8 @@ function CheeringMeComponent() {
         }}
       >
         {tmpList.map((i, idx) => (
-          <SwiperSlide>
-            <CheeringMeDetail key={idx} rankItem={i} />
+          <SwiperSlide key={idx}>
+            <CheeringMeDetail rankItem={i} />
           </SwiperSlide>
         ))}
       </Swiper>

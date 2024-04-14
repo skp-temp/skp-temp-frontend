@@ -1,4 +1,4 @@
-import React, { useMemo, useState } from 'react';
+import React, { useMemo, useState, useLayoutEffect } from 'react';
 import styled from 'styled-components';
 import { useInviteInputData } from '../../store';
 import buttonLarge from '../../assets/images/friendsInvite/buttonLarge.svg';
@@ -45,6 +45,17 @@ function FriendsInviteButton() {
       return buttonLargeDisable;
     }
   }, [inputData]);
+
+  const imgPreload = (imageArray: string[]) => {
+    imageArray.forEach((item) => {
+      let img = new Image();
+      img.src = item;
+    });
+  };
+
+  useLayoutEffect(() => {
+    imgPreload([buttonLarge, buttonLargeDisable]);
+  }, []);
 
   return (
     <FriendsInviteButtonComponent>

@@ -22,7 +22,7 @@ const SearchInput = styled.input`
   color: ${GRAY_COLOR.GRAY_900};
   position: relative;
   left: 20px;
-  top: 12px;
+  top: 14px;
   height: 20px;
   font-size: 16px;
   font-family: 'PretendardMedium';

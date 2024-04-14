@@ -60,6 +60,7 @@ const ItemName = styled.div`
   min-width: 41px;
   font-size: 16px;
   font-family: 'PretendardRegular';
+  letter-spacing: -0.4px;
   line-height: 24px;
   word-wrap: break-word;
 `;
@@ -67,7 +68,8 @@ const ItemName = styled.div`
 const ItemScore = styled.div<{ $color: string }>`
   color: ${(props) => props.$color};
   font-size: 16px;
-  font-family: 'PretendardRegular';
+  font-family: 'PretendardMedium';
+  letter-spacing: -0.4px;
   line-height: 24px;
   word-wrap: break-word;
 `;

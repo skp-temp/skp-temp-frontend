@@ -1,9 +1,9 @@
 import React from 'react';
 import styled from 'styled-components';
-import { GRAY_COLOR } from '../../../constants';
+import { GRAY_COLOR } from '../../constants';
 
 const FriendsMessageHeaderComponent = styled.div`
-  padding: 32px 0 32px 16px;
+  padding: 32px 16px 32px 16px;
 `;
 
 const NameComponent = styled.div`

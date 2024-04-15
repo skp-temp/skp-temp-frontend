@@ -10,10 +10,11 @@ const MAX_LENGTH = 120;
 const MessageCardComponent = styled.div`
   padding-top: 24px;
   background-color: ${THEME_COLOR.WORKOUT[200]};
-  width: 312px;
+  width: 100%;
   height: 280px;
   border-radius: 20px;
   position: relative;
+  box-shadow: 0px 4px 16px rgba(28, 28, 30, 0.1);
 `;
 
 const MessageTextCount = styled.div`
@@ -24,6 +25,7 @@ const MessageTextCount = styled.div`
   font-size: 14px;
   font-family: 'PretendardMedium';
   line-height: 14px;
+  letter-spacing: -0.4px;
 `;
 
 const MessageImage = styled.div`

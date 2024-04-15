@@ -1,11 +1,11 @@
 import React, { useMemo, useState, useLayoutEffect } from 'react';
 import styled from 'styled-components';
-import { useInviteInputData } from '../../store';
+import { useMessageInputData } from '../../store';
 import buttonLarge from '../../assets/images/common/buttonLarge.svg';
 import buttonLargeDisable from '../../assets/images/common/buttonLargeDisable.svg';
 import { GRAY_COLOR } from '../../constants';
 
-const FriendsInviteButtonComponent = styled.div``;
+const SendGiftButtonComponent = styled.div``;
 
 const ButtonBox = styled.div<{ $buttonStatus: string }>`
   background-image: url(${(props) => props.$buttonStatus});
@@ -15,7 +15,6 @@ const ButtonBox = styled.div<{ $buttonStatus: string }>`
   align-items: center;
   height: 56px;
   width: ${document.documentElement.clientWidth - 48}px;
-  margin: 12px 24px 0 24px;
   position: fixed;
   bottom: 16px;
   -webkit-backface-visibility: hidden;
@@ -30,13 +29,13 @@ const ButtonText = styled.div<{ $color: string }>`
   word-wrap: break-word;
 `;
 
-function FriendsInviteButton() {
+function SendGiftButton() {
   const [color, setColor] = useState<string>(GRAY_COLOR.GRAY_400);
-  const { inputData } = useInviteInputData();
+  const { inputData } = useMessageInputData();
 
   const calButtonStatus = useMemo(() => {
     // 인풋 데이터가 있고, 정규표현식 통과하면 흰색
-    if (inputData && /^[a-zA-Z0-9]*$/.test(inputData)) {
+    if (inputData) {
       setColor(GRAY_COLOR.WHITE);
       return buttonLarge;
       // 아니면 회색
@@ -58,12 +57,12 @@ function FriendsInviteButton() {
   }, []);
 
   return (
-    <FriendsInviteButtonComponent>
+    <SendGiftButtonComponent>
       <ButtonBox $buttonStatus={calButtonStatus}>
-        <ButtonText $color={color}>친구 요청 보내기</ButtonText>
+        <ButtonText $color={color}>응원 메세지 보내기</ButtonText>
       </ButtonBox>
-    </FriendsInviteButtonComponent>
+    </SendGiftButtonComponent>
   );
 }
 
-export default FriendsInviteButton;
+export default SendGiftButton;

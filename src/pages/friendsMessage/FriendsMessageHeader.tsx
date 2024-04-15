@@ -1,5 +1,6 @@
 import React from 'react';
 import styled from 'styled-components';
+import { useMessageFocus } from '../../store';
 import { GRAY_COLOR } from '../../constants';
 
 const FriendsMessageHeaderComponent = styled.div`
@@ -36,6 +37,8 @@ const GoalImage = styled.div`
 `;
 
 function FriendsMessageHeader() {
+  const { isFocus } = useMessageFocus();
+
   return (
     <FriendsMessageHeaderComponent>
       <NameComponent>하민님의 목표</NameComponent>

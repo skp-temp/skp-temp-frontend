@@ -1,6 +1,6 @@
 import React, { useState } from 'react';
 import styled from 'styled-components';
-import { useMessageInputData } from '../../../store';
+import { useMessageInputData, useMessageFocus } from '../../../store';
 import { GRAY_COLOR, SEMANTIC_COLOR, THEME_COLOR } from '../../../constants';
 
 const CHANGE_FONT_COUNT = 81;
@@ -30,6 +30,7 @@ const MessageCardTextComponent = styled.textarea<{ $size: string }>`
 
 function MessageCardText() {
   const { inputData, setInputData } = useMessageInputData();
+  const { setIsFocus } = useMessageFocus();
   const [size, setSize] = useState<string>('big');
 
   const onChange = (e: React.ChangeEvent<HTMLTextAreaElement>) => {
@@ -40,6 +41,7 @@ function MessageCardText() {
   };
 
   const onBlur = () => {
+    setIsFocus(false);
     if (inputData.length >= 120) {
       setInputData(inputData.slice(0, MAX_LENGTH));
     }
@@ -51,11 +53,16 @@ function MessageCardText() {
     }
   };
 
+  const onFocus = () => {
+    setIsFocus(true);
+  };
+
   return (
     <MessageCardTextComponent
       placeholder="이곳을 눌러서&#13;&#10;응원 메세지를&#13;&#10;입력해주세요"
       value={inputData}
       onChange={onChange}
+      onFocus={onFocus}
       onBlur={onBlur}
       onKeyDown={checkEnter}
       maxLength={MAX_LENGTH}

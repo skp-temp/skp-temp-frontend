@@ -2,6 +2,7 @@ import React, { useMemo } from 'react';
 import styled from 'styled-components';
 import FriendsInviteHeader from './FriendsInviteHeader';
 import FriendsInviteSearch from './FriendsInviteSearch';
+import MyCode from './MyCode';
 import LargeCTAButton from '../../components/common/LargeCTAButton';
 import { useInviteInputData } from '../../store';
 
@@ -29,6 +30,7 @@ function FriendsInvite() {
     <FriendsInviteComponent>
       <FriendsInviteHeader headerText={HEADER_STRING} />
       <FriendsInviteSearch />
+      <MyCode />
       <LargeCTAButton isActive={calButtonStatus} text={BUTTON_STRING} />
     </FriendsInviteComponent>
   );

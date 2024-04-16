@@ -1,15 +1,16 @@
 import React from 'react';
 import styled from 'styled-components';
+import { useMessageFocus } from '../../store';
 import gift from '../../assets/images/friendsMessage/gift.png';
 import chevron_right from '../../assets/images/friendsMessage/chevron_right.svg';
 import { GRAY_COLOR } from '../../constants';
 
 const GIFT_STRING = '선물과 함께 보내기';
 
-const SendGiftComponent = styled.div`
+const SendGiftComponent = styled.div<{ $isNone: string }>`
   margin-top: 24px;
   width: 100%;
-  display: flex;
+  display: ${(props) => props.$isNone};
   align-items: center;
   justify-content: space-between;
   height: 68px;
@@ -48,8 +49,10 @@ const ChevronRight = styled.div`
 `;
 
 function SendGift() {
+  const { isFocus } = useMessageFocus();
+
   return (
-    <SendGiftComponent>
+    <SendGiftComponent $isNone={isFocus ? 'none' : 'flex'}>
       <GiftLeftBox>
         <GiftImage />
         <GiftText>{GIFT_STRING}</GiftText>

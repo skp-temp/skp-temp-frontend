@@ -9,7 +9,6 @@ const FriendsInviteHeaderComponent = styled.div`
   line-height: 16px;
   letter-spacing: -0.4px;
   word-wrap: break-word;
-  margin: 0 24px;
 `;
 
 function FriendsInviteHeader(props: { headerText: string }) {

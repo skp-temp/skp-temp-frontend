@@ -1,11 +1,10 @@
-import React, { useMemo, useState, useLayoutEffect } from 'react';
+import React, { useLayoutEffect } from 'react';
 import styled from 'styled-components';
-import { useMessageInputData } from '../../store';
 import buttonLarge from '../../assets/images/common/buttonLarge.svg';
 import buttonLargeDisable from '../../assets/images/common/buttonLargeDisable.svg';
 import { GRAY_COLOR } from '../../constants';
 
-const SendGiftButtonComponent = styled.div``;
+const LargeCTAButtonComponent = styled.div``;
 
 const ButtonBox = styled.div<{ $buttonStatus: string }>`
   background-image: url(${(props) => props.$buttonStatus});
@@ -29,22 +28,7 @@ const ButtonText = styled.div<{ $color: string }>`
   word-wrap: break-word;
 `;
 
-function SendGiftButton() {
-  const [color, setColor] = useState<string>(GRAY_COLOR.GRAY_400);
-  const { inputData } = useMessageInputData();
-
-  const calButtonStatus = useMemo(() => {
-    // 인풋 데이터가 있고, 정규표현식 통과하면 흰색
-    if (inputData) {
-      setColor(GRAY_COLOR.WHITE);
-      return buttonLarge;
-      // 아니면 회색
-    } else {
-      setColor(GRAY_COLOR.GRAY_400);
-      return buttonLargeDisable;
-    }
-  }, [inputData]);
-
+function LargeCTAButton(props: { isActive: boolean; text: string }) {
   const imgPreload = (imageArray: string[]) => {
     imageArray.forEach((item) => {
       let img = new Image();
@@ -57,12 +41,18 @@ function SendGiftButton() {
   }, []);
 
   return (
-    <SendGiftButtonComponent>
-      <ButtonBox $buttonStatus={calButtonStatus}>
-        <ButtonText $color={color}>응원 메세지 보내기</ButtonText>
+    <LargeCTAButtonComponent>
+      <ButtonBox
+        $buttonStatus={props.isActive ? buttonLarge : buttonLargeDisable}
+      >
+        <ButtonText
+          $color={props.isActive ? GRAY_COLOR.WHITE : GRAY_COLOR.GRAY_400}
+        >
+          {props.text}
+        </ButtonText>
       </ButtonBox>
-    </SendGiftButtonComponent>
+    </LargeCTAButtonComponent>
   );
 }
 
-export default SendGiftButton;
+export default LargeCTAButton;

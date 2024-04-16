@@ -3,8 +3,11 @@ import styled from 'styled-components';
 import FriendsMessageHeader from './FriendsMessageHeader';
 import MessageCard from './MessageCard/MessageCard';
 import SendGift from './SendGift';
-import SendGiftButton from './SendGiftButton';
+import LargeCTAButton from '../../components/common/LargeCTAButton';
 import { THEME_COLOR } from '../../constants';
+import { useMessageInputData } from '../../store';
+
+const BUTTON_STRING = '응원 메세지 보내기';
 
 const FriendsMessageComponent = styled.div`
   padding: 0 24px 0 24px;
@@ -13,12 +16,17 @@ const FriendsMessageComponent = styled.div`
 `;
 
 function FriendsMessage() {
+  const { inputData } = useMessageInputData();
+
   return (
     <FriendsMessageComponent>
       <FriendsMessageHeader />
       <MessageCard />
       <SendGift />
-      <SendGiftButton />
+      <LargeCTAButton
+        isActive={inputData ? true : false}
+        text={BUTTON_STRING}
+      />
     </FriendsMessageComponent>
   );
 }

@@ -14,7 +14,7 @@ const SearchBox = styled.div<{ $inputStatus: string }>`
   background-size: 100% 48px;
   height: 48px;
   width: ${document.documentElement.clientWidth - 48}px;
-  margin: 12px 24px 0 24px;
+  margin-top: 12px;
   position: relative;
 `;
 

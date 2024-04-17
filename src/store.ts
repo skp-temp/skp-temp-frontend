@@ -23,3 +23,15 @@ export const useMessageInputData = create<MessageInputData>((set) => ({
     set((state) => ({ inputData: inputData }));
   },
 }));
+
+interface MessageFocus {
+  isFocus: boolean;
+  setIsFocus: (isFocus: boolean) => void;
+}
+
+export const useMessageFocus = create<MessageFocus>((set) => ({
+  isFocus: false,
+  setIsFocus: (isFocus) => {
+    set((state) => ({ isFocus: isFocus }));
+  },
+}));

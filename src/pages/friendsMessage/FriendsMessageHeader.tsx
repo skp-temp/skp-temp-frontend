@@ -1,9 +1,15 @@
 import React from 'react';
 import styled from 'styled-components';
-import { GRAY_COLOR } from '../../../constants';
+import { useMessageFocus } from '../../store';
+import { GRAY_COLOR } from '../../constants';
 
 const FriendsMessageHeaderComponent = styled.div`
-  padding: 32px 0 32px 16px;
+  padding: 32px 16px 0 16px;
+`;
+
+const HeaderComponent = styled.div<{ $isNone: string }>`
+  padding-bottom: 32px;
+  display: ${(props) => props.$isNone};
 `;
 
 const NameComponent = styled.div`
@@ -36,13 +42,17 @@ const GoalImage = styled.div`
 `;
 
 function FriendsMessageHeader() {
+  const { isFocus } = useMessageFocus();
+
   return (
     <FriendsMessageHeaderComponent>
-      <NameComponent>하민님의 목표</NameComponent>
-      <GoalComponent>
-        <GoalText>나는 건강짱이 될거야!</GoalText>
-        <GoalImage />
-      </GoalComponent>
+      <HeaderComponent $isNone={isFocus ? 'none' : 'block'}>
+        <NameComponent>하민님의 목표</NameComponent>
+        <GoalComponent>
+          <GoalText>나는 건강짱이 될거야!</GoalText>
+          <GoalImage />
+        </GoalComponent>
+      </HeaderComponent>
     </FriendsMessageHeaderComponent>
   );
 }

@@ -1,9 +1,9 @@
 import React from 'react';
 import styled from 'styled-components';
 import MessageCardText from './MessageCardText';
-import { useMessageInputData } from '../../../store';
-import { THEME_COLOR } from '../../../constants';
-import baby from '../../../assets/images/friendsMessage/baby.png';
+import { useMessageInputData } from '../../store';
+import { THEME_COLOR } from '../../constants';
+import baby from '../../assets/images/friendsMessage/baby.png';
 
 const MAX_LENGTH = 120;
 

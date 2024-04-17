@@ -1,7 +1,7 @@
 import React, { useState } from 'react';
 import styled from 'styled-components';
-import { useMessageInputData, useMessageFocus } from '../../../store';
-import { GRAY_COLOR, SEMANTIC_COLOR, THEME_COLOR } from '../../../constants';
+import { useMessageInputData, useMessageFocus } from '../../store';
+import { GRAY_COLOR, SEMANTIC_COLOR, THEME_COLOR } from '../../constants';
 
 const CHANGE_FONT_COUNT = 81;
 const MAX_LENGTH = 120;

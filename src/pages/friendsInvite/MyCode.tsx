@@ -60,9 +60,7 @@ function MyCode() {
     <MyCodeComponent>
       <TextBox>나의 사용자 코드에요.</TextBox>
       <CodeComponent>
-        <CodeText id="codeText" readOnly>
-          @codecode
-        </CodeText>
+        <CodeText id="codeText" readOnly value="@codecode" />
         <CopyImage onClick={onClickCopy} />
       </CodeComponent>
     </MyCodeComponent>

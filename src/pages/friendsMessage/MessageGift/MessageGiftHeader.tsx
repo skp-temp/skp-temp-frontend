@@ -8,7 +8,8 @@ const MessageGiftHeaderComponent = styled.div`
 `;
 
 const HeaderImage = styled.div`
-  background-image: url(images/analysis/workout.svg);
+  background-image: url(${process.env.PUBLIC_URL +
+  `../images/analysis/workout.svg`});
   background-size: cover;
   width: 24px;
   height: 24px;

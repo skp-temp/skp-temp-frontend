@@ -1,6 +1,7 @@
 import React from 'react';
 import styled from 'styled-components';
-import { GRAY_COLOR } from '../../constants';
+import { useGiftItemSelect } from '../../store';
+import { GRAY_COLOR, SEMANTIC_COLOR } from '../../constants';
 
 const ItemBox = styled.div`
   display: flex;
@@ -8,14 +9,16 @@ const ItemBox = styled.div`
   width: 98px;
 `;
 
-const ItemImageBox = styled.div`
+const ItemImageBox = styled.div<{ $borderColor: string }>`
   position: relative;
   margin-top: 24px;
   background-color: ${GRAY_COLOR.GRAY_100};
   border-radius: 12px;
-  border-width: 2px;
-  width: 98px;
-  height: 98px;
+  border-style: solid;
+  border-width: 2.5px;
+  border-color: ${(props) => props.$borderColor};
+  width: 93.2px;
+  height: 93.2px;
 `;
 
 const ItemText = styled.div`
@@ -43,10 +46,22 @@ const ItemCount = styled.div`
   border-radius: 32px;
 `;
 
-function ItemComponent(props: { itemName: string; count: number }) {
+function ItemComponent(props: {
+  itemName: string;
+  count: number;
+  idx: number;
+}) {
+  const { selectNum } = useGiftItemSelect();
+
   return (
     <ItemBox>
-      <ItemImageBox>
+      <ItemImageBox
+        $borderColor={
+          selectNum === props.idx + 1
+            ? SEMANTIC_COLOR.BLUE
+            : GRAY_COLOR.GRAY_100
+        }
+      >
         {props.count > 1 ? <ItemCount>{props.count}</ItemCount> : null}
       </ItemImageBox>
       <ItemText>{props.itemName}</ItemText>

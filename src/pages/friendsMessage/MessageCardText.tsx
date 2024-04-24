@@ -1,17 +1,14 @@
 import React, { useState } from 'react';
 import styled from 'styled-components';
-import { useMessageInputData, useMessageFocus } from '../../../store';
-import { GRAY_COLOR, SEMANTIC_COLOR, THEME_COLOR } from '../../../constants';
+import { useMessageInputData, useMessageFocus } from '../../store';
+import { GRAY_COLOR, SEMANTIC_COLOR, THEME_COLOR } from '../../constants';
 
 const CHANGE_FONT_COUNT = 81;
 const MAX_LENGTH = 120;
 
 const MessageCardTextComponent = styled.textarea<{ $size: string }>`
   color: ${GRAY_COLOR.GRAY_900};
-  position: relative;
-  left: 28px;
-  top: 28px;
-  width: 256px;
+  width: 100%;
   height: 186px;
   font-size: ${(props) => (props.$size === 'big' ? '20px' : '16px')};
   font-family: ${(props) =>

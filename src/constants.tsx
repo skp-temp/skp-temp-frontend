@@ -72,3 +72,16 @@ export const THEME_COLOR = {
     '400': '#703F12',
   },
 } as const;
+
+// category
+
+export const CATEGORY_LIST: string[] = [
+  '운동',
+  '금전',
+  '식습관',
+  '뷰티',
+  '행복',
+  '공부',
+  '갓생',
+  '반려동물',
+];

@@ -9,6 +9,10 @@ const FriendsInvite = React.lazy(
 const FriendsMessage = React.lazy(
   () => import('./pages/friendsMessage/FriendsMessage'),
 );
+const MessageGift = React.lazy(
+  () => import('./pages/friendsMessage/MessageGift/MessageGift'),
+);
+const MyItem = React.lazy(() => import('./pages/myItem/MyItem'));
 
 function App() {
   return (
@@ -19,6 +23,8 @@ function App() {
         <Route path="/friendsMain" element={<FriendsMain />}></Route>
         <Route path="/friendsInvite" element={<FriendsInvite />}></Route>
         <Route path="/friendsMessage" element={<FriendsMessage />}></Route>
+        <Route path="/friendsMessage/Gift" element={<MessageGift />}></Route>
+        <Route path="/myItem" element={<MyItem />}></Route>
       </Routes>
     </BrowserRouter>
   );

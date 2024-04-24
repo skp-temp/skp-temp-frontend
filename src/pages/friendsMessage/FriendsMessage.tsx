@@ -1,7 +1,7 @@
 import React from 'react';
 import styled from 'styled-components';
 import FriendsMessageHeader from './FriendsMessageHeader';
-import MessageCard from './MessageCard/MessageCard';
+import MessageCard from './MessageCard';
 import SendGift from './SendGift';
 import LargeCTAButton from '../../components/common/LargeCTAButton';
 import { THEME_COLOR } from '../../constants';

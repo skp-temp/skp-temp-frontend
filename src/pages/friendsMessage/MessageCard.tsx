@@ -1,20 +1,23 @@
 import React from 'react';
 import styled from 'styled-components';
 import MessageCardText from './MessageCardText';
-import { useMessageInputData } from '../../../store';
-import { THEME_COLOR } from '../../../constants';
-import baby from '../../../assets/images/friendsMessage/baby.png';
+import { useMessageInputData } from '../../store';
+import { THEME_COLOR } from '../../constants';
+import baby from '../../assets/images/friendsMessage/baby.png';
 
 const MAX_LENGTH = 120;
 
 const MessageCardComponent = styled.div`
-  padding-top: 24px;
   background-color: ${THEME_COLOR.WORKOUT[200]};
   width: 100%;
   height: 280px;
   border-radius: 20px;
   position: relative;
   box-shadow: 0px 4px 16px rgba(28, 28, 30, 0.1);
+`;
+
+const MessageCardBox = styled.div`
+  padding: 28px;
 `;
 
 const MessageTextCount = styled.div`
@@ -43,7 +46,9 @@ function MessageCard() {
 
   return (
     <MessageCardComponent>
-      <MessageCardText />
+      <MessageCardBox>
+        <MessageCardText />
+      </MessageCardBox>
       <MessageTextCount>
         {inputData.length}/{MAX_LENGTH}
       </MessageTextCount>

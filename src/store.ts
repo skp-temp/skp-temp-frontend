@@ -1,3 +1,4 @@
+import { NumberLiteralType } from 'typescript';
 import { create } from 'zustand';
 
 interface InviteInputData {
@@ -33,5 +34,17 @@ export const useMessageFocus = create<MessageFocus>((set) => ({
   isFocus: false,
   setIsFocus: (isFocus) => {
     set((state) => ({ isFocus: isFocus }));
+  },
+}));
+
+interface GiftItemSelect {
+  selectNum: number;
+  setSelectNum: (selectNum: number) => void;
+}
+
+export const useGiftItemSelect = create<GiftItemSelect>((set) => ({
+  selectNum: 0,
+  setSelectNum: (selectNum) => {
+    set((state) => ({ selectNum: selectNum }));
   },
 }));

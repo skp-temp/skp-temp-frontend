@@ -34,7 +34,8 @@ const GoalText = styled.div`
 `;
 
 const GoalImage = styled.div`
-  background-image: url(images/analysis/workout.svg);
+  background-image: url(${process.env.PUBLIC_URL +
+  `images/analysis/workout.svg`});
   background-size: cover;
   width: 32px;
   height: 32px;

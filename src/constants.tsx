@@ -85,3 +85,10 @@ export const CATEGORY_LIST: string[] = [
   '갓생',
   '반려동물',
 ];
+
+export const SELECT_OPTION_LIST: string[] = [
+  '모든 아이템',
+  '장착템',
+  '코스튬',
+  '패션소품',
+];

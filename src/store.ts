@@ -48,3 +48,15 @@ export const useGiftItemSelect = create<GiftItemSelect>((set) => ({
     set((state) => ({ selectNum: selectNum }));
   },
 }));
+
+interface ComboBoxSelect {
+  comboBox: string;
+  setComboBox: (comboBox: string) => void;
+}
+
+export const useComboBox = create<ComboBoxSelect>((set) => ({
+  comboBox: '모든 아이템',
+  setComboBox: (comboBox) => {
+    set((state) => ({ comboBox: comboBox }));
+  },
+}));

@@ -1,7 +1,7 @@
 import React from 'react';
 import styled from 'styled-components';
 import ItemCategory from './ItemCategory';
-import ItemSelectBox from './itemSelectBox';
+import ItemSelectBox from './ItemSelectBox';
 
 const MyItemComponent = styled.div``;
 

@@ -1,16 +1,42 @@
-import React from 'react';
+import React, { useState } from 'react';
 import styled from 'styled-components';
 import { useComboBox } from '../../store';
-import { SELECT_OPTION_LIST, GRAY_COLOR } from '../../constants';
+import ArrowDown from '../../assets/images/myItem/ArrowDown.svg';
+import {
+  SELECT_OPTION_LIST,
+  GRAY_COLOR,
+  SEMANTIC_COLOR,
+} from '../../constants';
 
-const ItemSelectBoxComponent = styled.div``;
+const ItemSelectBoxComponent = styled.div`
+  display: flex;
+  width: 100%;
+  justify-content: space-between;
+`;
 
 const ComboBox = styled.div`
+  display: flex;
+`;
+
+const ComboBoxItem = styled.div`
   color: ${GRAY_COLOR.GRAY_800};
   font-size: 14px;
   font-family: 'PretendardMedium';
-  line-height: 14px;
+  line-height: 16px;
   letter-spacing: -0.4px;
+  min-width: 65px;
+`;
+
+const ArrowDownImage = styled.div`
+  background-image: url(${ArrowDown});
+  background-size: cover;
+  width: 16px;
+  height: 16px;
+`;
+
+const OptionListBox = styled.div`
+  overflow: hidden;
+  transition: 0.1s ease-in;
 `;
 
 const OptionList = styled.ul`
@@ -36,16 +62,44 @@ const OptionItem = styled.li`
   box-sizing: border-box;
 `;
 
+const CountBox = styled.div`
+  color: ${SEMANTIC_COLOR.BLUE};
+  font-size: 14px;
+  font-family: 'PretendardMedium';
+  line-height: 16px;
+  letter-spacing: -0.4px;
+`;
+
 function ItemSelectBox() {
   const { comboBox, setComboBox } = useComboBox();
+  const [clickArrow, setClickArrow] = useState<boolean>(false);
+
+  const onClickArrow = () => {
+    setClickArrow(!clickArrow);
+  };
+
+  const onClickOption = (option: string) => {
+    setComboBox(option);
+    setClickArrow(false);
+  };
   return (
     <ItemSelectBoxComponent>
-      <ComboBox>{comboBox}</ComboBox>
-      <OptionList>
-        {SELECT_OPTION_LIST.map((item) => (
-          <OptionItem key={item}>{item}</OptionItem>
-        ))}
-      </OptionList>
+      <div>
+        <ComboBox onClick={onClickArrow}>
+          <ComboBoxItem>{comboBox}</ComboBoxItem>
+          <ArrowDownImage />
+        </ComboBox>
+        <OptionListBox style={{ height: clickArrow ? '128px' : '0px' }}>
+          <OptionList>
+            {SELECT_OPTION_LIST.map((item) => (
+              <OptionItem key={item} onClick={() => onClickOption(item)}>
+                {item}
+              </OptionItem>
+            ))}
+          </OptionList>
+        </OptionListBox>
+      </div>
+      <CountBox>30</CountBox>
     </ItemSelectBoxComponent>
   );
 }

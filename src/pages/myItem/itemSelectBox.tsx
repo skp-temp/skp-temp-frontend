@@ -37,6 +37,8 @@ const ArrowDownImage = styled.div`
 const OptionListBox = styled.div`
   overflow: hidden;
   transition: 0.1s ease-in;
+  position: absolute;
+  z-index: 1;
 `;
 
 const OptionList = styled.ul`
@@ -47,6 +49,7 @@ const OptionList = styled.ul`
   border-radius: 10px;
   padding: 8.5px 10px;
   margin: 11px 0;
+  background-color: ${GRAY_COLOR.WHITE};
 `;
 
 const OptionItem = styled.li`

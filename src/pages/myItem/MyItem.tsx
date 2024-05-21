@@ -2,6 +2,7 @@ import React from 'react';
 import styled from 'styled-components';
 import ItemCategory from './ItemCategory';
 import ItemSelectBox from './ItemSelectBox';
+import ItemBox from './ItemBox';
 
 const MyItemComponent = styled.div``;
 
@@ -17,6 +18,7 @@ function MyItem() {
       <ComboBoxComponent>
         <ItemSelectBox />
       </ComboBoxComponent>
+      <ItemBox />
     </MyItemComponent>
   );
 }

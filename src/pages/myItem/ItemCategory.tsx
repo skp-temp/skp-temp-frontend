@@ -33,7 +33,7 @@ const TextBox = styled.div`
 function ItemCategory() {
   return (
     <ItemCategoryComponent>
-      {CATEGORY_LIST.map((item) => (
+      {Object.values(CATEGORY_LIST).map((item) => (
         <CategoryBox key={item}>
           <TextBox>{item}</TextBox>
         </CategoryBox>

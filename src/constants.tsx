@@ -75,7 +75,7 @@ export const THEME_COLOR = {
 
 // category
 
-export const CATEGORY_LIST = {
+export const CATEGORY_OBJECT = {
   WORKOUT: '운동',
   MONEY: '금전',
   DIET: '식습관',
@@ -86,11 +86,22 @@ export const CATEGORY_LIST = {
   PET: '반려동물',
 };
 
+export const CATEGORY_LIST: CategoryType[] = [
+  'WORKOUT',
+  'MONEY',
+  'DIET',
+  'BEAUTY',
+  'HAPPY',
+  'STUDY',
+  'HUSTLE',
+  'PET',
+];
+
 export const SELECT_OPTION_LIST: string[] = [
   '모든 아이템',
-  '장착템',
-  '코스튬',
-  '패션소품',
+  '소품',
+  '의상',
+  '악세서리',
 ];
 
 export type CategoryType =

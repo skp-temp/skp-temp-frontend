@@ -1,6 +1,6 @@
-import React, { useState } from 'react';
+import React from 'react';
 import styled from 'styled-components';
-import { useComboBox } from '../../store';
+import { useComboBox, useOpenSelectBox } from '../../store';
 import ArrowDown from '../../assets/images/myItem/ArrowDown.svg';
 import {
   SELECT_OPTION_LIST,
@@ -75,15 +75,16 @@ const CountBox = styled.div`
 
 function ItemSelectBox() {
   const { comboBox, setComboBox } = useComboBox();
-  const [clickArrow, setClickArrow] = useState<boolean>(false);
+  const { isOpenSelectBox, setIsOpenSelectBox } = useOpenSelectBox();
 
-  const onClickArrow = () => {
-    setClickArrow(!clickArrow);
+  const onClickArrow = (e: React.MouseEvent) => {
+    setIsOpenSelectBox(true);
+    e.stopPropagation();
   };
 
   const onClickOption = (option: string) => {
     setComboBox(option);
-    setClickArrow(false);
+    setIsOpenSelectBox(false);
   };
   return (
     <ItemSelectBoxComponent>
@@ -92,7 +93,7 @@ function ItemSelectBox() {
           <ComboBoxItem>{comboBox}</ComboBoxItem>
           <ArrowDownImage />
         </ComboBox>
-        <OptionListBox style={{ height: clickArrow ? '128px' : '0px' }}>
+        <OptionListBox style={{ height: isOpenSelectBox ? '128px' : '0px' }}>
           <OptionList>
             {SELECT_OPTION_LIST.map((item) => (
               <OptionItem key={item} onClick={() => onClickOption(item)}>
@@ -102,7 +103,7 @@ function ItemSelectBox() {
           </OptionList>
         </OptionListBox>
       </div>
-      <CountBox>30</CountBox>
+      <CountBox>30개</CountBox>
     </ItemSelectBoxComponent>
   );
 }

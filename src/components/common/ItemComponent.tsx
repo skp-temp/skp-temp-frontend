@@ -6,7 +6,7 @@ import {
   GRAY_COLOR,
   SEMANTIC_COLOR,
   THEME_COLOR,
-  CATEGORY_LIST,
+  CATEGORY_OBJECT,
 } from '../../constants';
 
 const ItemBox = styled.div`
@@ -74,11 +74,11 @@ function ItemComponent(props: {
   count: number;
   idx: number;
   category?: CategoryType;
+  clickItem?: () => void;
 }) {
   const { selectNum } = useGiftItemSelect();
-
   return (
-    <ItemBox>
+    <ItemBox onClick={props.clickItem}>
       <ItemImageBox
         $borderColor={
           selectNum === props.idx + 1
@@ -92,7 +92,7 @@ function ItemComponent(props: {
             $color={THEME_COLOR[props.category][400]}
             $bgColor={THEME_COLOR[props.category][200]}
           >
-            {CATEGORY_LIST[props.category]}
+            {CATEGORY_OBJECT[props.category]}
           </ItemCategory>
         ) : null}
       </ItemImageBox>

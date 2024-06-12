@@ -21,6 +21,8 @@ interface PropsType {
   ModalHeight: number;
 }
 
+const BOTTOMTEXT = '소품은 7일 차부터 장착할 수 있어요.';
+
 const ModalBackGround = styled.div`
   background-color: rgba(0, 0, 0, 0.7);
   width: 100%;
@@ -125,7 +127,7 @@ const TextBox = styled.div`
 `;
 
 const TextLeft = styled.div`
-color: ${GRAY_COLOR.BLACK}
+  color: ${GRAY_COLOR.BLACK};
   font-size: 16px;
   font-family: 'PretendardRegular';
   line-height: 24px;
@@ -138,6 +140,15 @@ const TextRight = styled.div<{ $color: string }>`
   font-family: 'PretendardMedium';
   line-height: 24px;
   letter-spacing: -0.4px;
+`;
+
+const BottomText = styled.div`
+  color: ${GRAY_COLOR.WHITE};
+  font-size: 14px;
+  font-family: 'PretendardRegular';
+  line-height: 20px;
+  letter-spacing: -0.4px;
+  text-align: center;
 `;
 
 function ModalComponent({
@@ -191,6 +202,7 @@ function ModalComponent({
             </TextBox>
           </ModalBottom>
         </ModalBox>
+        <BottomText>{BOTTOMTEXT}</BottomText>
       </ModalWrap>
     </ModalPortal>
   );

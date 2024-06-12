@@ -75,13 +75,41 @@ export const THEME_COLOR = {
 
 // category
 
-export const CATEGORY_LIST: string[] = [
-  '운동',
-  '금전',
-  '식습관',
-  '뷰티',
-  '행복',
-  '공부',
-  '갓생',
-  '반려동물',
+export const CATEGORY_OBJECT = {
+  WORKOUT: '운동',
+  MONEY: '금전',
+  DIET: '식습관',
+  BEAUTY: '뷰티',
+  HAPPY: '행복',
+  STUDY: '공부',
+  HUSTLE: '갓생',
+  PET: '반려동물',
+};
+
+export const CATEGORY_LIST: CategoryType[] = [
+  'WORKOUT',
+  'MONEY',
+  'DIET',
+  'BEAUTY',
+  'HAPPY',
+  'STUDY',
+  'HUSTLE',
+  'PET',
 ];
+
+export const SELECT_OPTION_LIST: string[] = [
+  '모든 아이템',
+  '소품',
+  '의상',
+  '악세서리',
+];
+
+export type CategoryType =
+  | 'WORKOUT'
+  | 'MONEY'
+  | 'DIET'
+  | 'BEAUTY'
+  | 'HAPPY'
+  | 'STUDY'
+  | 'HUSTLE'
+  | 'PET';

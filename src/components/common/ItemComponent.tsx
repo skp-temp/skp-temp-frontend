@@ -1,7 +1,13 @@
 import React from 'react';
 import styled from 'styled-components';
 import { useGiftItemSelect } from '../../store';
-import { GRAY_COLOR, SEMANTIC_COLOR } from '../../constants';
+import { CategoryType } from '../../constants';
+import {
+  GRAY_COLOR,
+  SEMANTIC_COLOR,
+  THEME_COLOR,
+  CATEGORY_OBJECT,
+} from '../../constants';
 
 const ItemBox = styled.div`
   display: flex;
@@ -31,6 +37,23 @@ const ItemText = styled.div`
   text-align: center;
 `;
 
+const ItemCategory = styled.div<{ $color: string; $bgColor: string }>`
+  color: ${(props) => props.$color};
+  background-color: ${(props) => props.$bgColor};
+  position: absolute;
+  padding: 2px 4px 3px 4px;
+  left: 8px;
+  top: 8px;
+  width: auto;
+  height: auto;
+  font-size: 10px;
+  font-family: 'PretendardMedium';
+  line-height: 10px;
+  letter-spacing: -0.4px;
+  text-align: center;
+  border-radius: 2px;
+`;
+
 const ItemCount = styled.div`
   color: ${GRAY_COLOR.GRAY_400};
   background-color: ${GRAY_COLOR.WHITE};
@@ -50,11 +73,12 @@ function ItemComponent(props: {
   itemName: string;
   count: number;
   idx: number;
+  category?: CategoryType;
+  clickItem?: () => void;
 }) {
   const { selectNum } = useGiftItemSelect();
-
   return (
-    <ItemBox>
+    <ItemBox onClick={props.clickItem}>
       <ItemImageBox
         $borderColor={
           selectNum === props.idx + 1
@@ -63,6 +87,14 @@ function ItemComponent(props: {
         }
       >
         {props.count > 1 ? <ItemCount>{props.count}</ItemCount> : null}
+        {props.category ? (
+          <ItemCategory
+            $color={THEME_COLOR[props.category][400]}
+            $bgColor={THEME_COLOR[props.category][200]}
+          >
+            {CATEGORY_OBJECT[props.category]}
+          </ItemCategory>
+        ) : null}
       </ItemImageBox>
       <ItemText>{props.itemName}</ItemText>
     </ItemBox>

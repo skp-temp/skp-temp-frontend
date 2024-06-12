@@ -13,6 +13,9 @@ const MessageGift = React.lazy(
   () => import('./pages/friendsMessage/MessageGift/MessageGift'),
 );
 const MyItem = React.lazy(() => import('./pages/myItem/MyItem'));
+const ItemRandomPick = React.lazy(
+  () => import('./pages/myItem/ItemRandomPick/ItemRandomPick'),
+);
 
 function App() {
   return (
@@ -25,6 +28,7 @@ function App() {
         <Route path="/friendsMessage" element={<FriendsMessage />}></Route>
         <Route path="/friendsMessage/Gift" element={<MessageGift />}></Route>
         <Route path="/myItem" element={<MyItem />}></Route>
+        <Route path="/myItem/pick" element={<ItemRandomPick />}></Route>
       </Routes>
     </BrowserRouter>
   );

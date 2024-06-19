@@ -125,5 +125,4 @@ export interface Data {
 
 export const BASE_URL_DEV = 'http://13.125.146.145:8080/';
 
-export const TOKEN_DEV =
-  'Bearer eyJhbGciOiJIUzI1NiJ9.eyJyb2xlIjoiVVNFUiIsInVzZXJfaWQiOjMsImlhdCI6MTcxODc5MzUyOCwiZXhwIjoxNzI3NDMzNTI4LCJzdWIiOiIzIn0.j1UNijCEbemJ109G-hECOc7_8UQUpbBHWmi81_4jJKU';
+export const TOKEN_DEV = '9.eyJyb2xlIjoiVVNFUiIsInVzZXJfaWQiOjMsImlhdCI6MTcxODc5MzUyOCwiZXhwIjoxNzI3NDMzNTI4LCJzdWIiOiIzIn0.j1UNijCEbemJ109G-hECOc7_8UQUpbBHWmi81_4jJKU';

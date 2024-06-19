@@ -3,6 +3,7 @@ import styled from 'styled-components';
 import ComponentsPadding from '../../../components/common/ComponentsPadding';
 import AnalysisCharacter from '../../../assets/images/analysis/AnalysisCharacter.png';
 import { SEMANTIC_COLOR, GRAY_COLOR } from '../../../constants';
+import { useUserAnalysis } from '../../../hooks/analysis/user';
 
 const HeaderComponent = styled.div`
   display: flex;
@@ -65,6 +66,8 @@ const TextRight = styled.div`
 `;
 
 function AnalysisHeader() {
+  const { isPending, error, data } = useUserAnalysis();
+
   return (
     <>
       <HeaderComponent>
@@ -72,7 +75,7 @@ function AnalysisHeader() {
         <HeaderTextBox>
           <TextTop>부키와 함께 한 지</TextTop>
           <TextBottom>
-            <TextLeft>20</TextLeft>
+            <TextLeft>{data?.result.userDays}</TextLeft>
             <TextRight>일 째</TextRight>
           </TextBottom>
         </HeaderTextBox>

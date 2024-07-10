@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { Suspense } from 'react';
 import styled from 'styled-components';
 import AnalysisHeader from './AnalysisHeader/AnalysisHeader';
 import WeeklySummary from './WeeklySummary/WeeklySummary';
@@ -20,14 +20,16 @@ const AnalysisPage = styled.div`
 
 function Analysis() {
   return (
-    <AnalysisPage>
-      <AnalysisHeader />
-      <WeeklySummary />
-      <CategoryRank />
-      <EmotionRank />
-      <CheeringMe />
-      <CheeringTo />
-    </AnalysisPage>
+    <Suspense fallback={<div>로딩중..</div>}>
+      <AnalysisPage>
+        <AnalysisHeader />
+        <WeeklySummary />
+        <CategoryRank />
+        <EmotionRank />
+        <CheeringMe />
+        <CheeringTo />
+      </AnalysisPage>
+    </Suspense>
   );
 }
 

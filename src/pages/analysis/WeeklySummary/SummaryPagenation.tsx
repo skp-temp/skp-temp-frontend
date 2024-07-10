@@ -18,12 +18,13 @@ const PagenationText = styled.div`
   display: flex;
   justify-content: center;
   align-items: center;
-  width: 59px;
+  width: auto;
   font-size: 12px;
   font-family: 'PretendardMedium';
   letter-spacing: -0.4px;
   line-weight: 12px;
   word-wrap: 'break-word';
+  margin: 0 8px;
 `;
 
 const ArrowRightImage = styled.div`
@@ -37,7 +38,7 @@ function SummaryPagenation() {
   return (
     <Pagenation>
       <ArrowLeftImage />
-      <PagenationText>1월 1주차</PagenationText>
+      <PagenationText>24년 1월 1주차</PagenationText>
       <ArrowRightImage />
     </Pagenation>
   );

@@ -18,7 +18,13 @@ const ItemRandomPick = React.lazy(
   () => import('./pages/myItem/ItemRandomPick/ItemRandomPick'),
 );
 
-const queryClient = new QueryClient();
+const queryClient = new QueryClient({
+  defaultOptions: {
+    queries: {
+      suspense: true,
+    },
+  },
+});
 
 function App() {
   return (

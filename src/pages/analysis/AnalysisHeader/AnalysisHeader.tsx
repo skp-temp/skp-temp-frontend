@@ -17,8 +17,8 @@ const HeaderComponent = styled.div`
 const HeaderImage = styled.div`
   background-image: url(${AnalysisCharacter});
   background-size: cover;
-  width: 119px;
-  height: 119px;
+  width: 120px;
+  height: 120px;
 `;
 
 const HeaderTextBox = styled.div`
@@ -26,7 +26,7 @@ const HeaderTextBox = styled.div`
   width: auto;
   height: auto;
   border-radius: 20px;
-  margin: 15px 12px;
+  margin: 15px 11.5px;
   padding: 16px 48px 20px 32px;
 `;
 

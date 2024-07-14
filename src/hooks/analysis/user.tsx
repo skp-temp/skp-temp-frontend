@@ -7,19 +7,6 @@ interface UserData extends Data {
   result: { userDays: number };
 }
 
-const cookies = new Cookies();
-
-const fetchUserAnalysis = async () => {
-  if (cookies.get('jwt')) {
-    return await GET_API(
-      'Bearer ' + cookies.get('jwt'),
-      BASE_URL_DEV + '/statistics/user',
-    );
-  } else {
-    return console.log('error', cookies.get('jwt'));
-  }
-};
-
 // const fetchUserAnalysis = async () => {
 //   return await GET_API(
 //     'Bearer ' + TOKEN_DEV,
@@ -28,6 +15,19 @@ const fetchUserAnalysis = async () => {
 // };
 
 export const useUserAnalysis = () => {
+  const cookies = new Cookies();
+
+  const fetchUserAnalysis = async () => {
+    if (cookies.get('jwt')) {
+      return await GET_API(
+        'Bearer ' + cookies.get('jwt'),
+        BASE_URL_DEV + '/statistics/user',
+      );
+    } else {
+      return console.log('error');
+    }
+  };
+
   const { isPending, error, data } = useSuspenseQuery<
     boolean,
     string,

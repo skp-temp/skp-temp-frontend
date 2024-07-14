@@ -113,3 +113,17 @@ export type CategoryType =
   | 'STUDY'
   | 'HUSTLE'
   | 'PET';
+// 타입
+
+export interface Data {
+  code: string;
+  message: string;
+  status: string;
+}
+
+// 개발
+
+export const BASE_URL_DEV = 'http://13.125.146.145:8080/';
+
+export const TOKEN_DEV =
+  'eyJhbGciOiJIUzI1NiJ9.eyJyb2xlIjoiVVNFUiIsInVzZXJfaWQiOjMsImlhdCI6MTcyMDk2NTk3MCwiZXhwIjoxNzI5NjA1OTcwLCJzdWIiOiIzIn0.Z3EjR3NLBLuZLMj8_-tdbBOF_fAVf6sw7__Dd9iOzX0';

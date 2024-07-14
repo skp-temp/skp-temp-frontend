@@ -24,11 +24,10 @@ const DaysTextItem = styled.div<{ $color: string }>`
 `;
 
 function SummaryItemsComponent() {
-  const week: string[] = ['월', '화', '수', '목', '금', '토', '일'];
+  const week: string[] = ['일', '월', '화', '수', '목', '금', '토'];
 
   const getNowDayTrue = (idx: number) => {
-    let nowDay: number = new Date().getDay() - 1;
-    if (nowDay === -1) nowDay = 6;
+    let nowDay: number = new Date().getDay();
     if (nowDay === idx) return true;
     else return false;
   };

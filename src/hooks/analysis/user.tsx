@@ -16,7 +16,7 @@ const fetchUserAnalysis = async () => {
       BASE_URL_DEV + '/statistics/user',
     );
   } else {
-    return console.log('error');
+    return console.log('error', cookies.get('jwt'));
   }
 };
 

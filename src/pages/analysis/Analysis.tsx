@@ -1,4 +1,5 @@
 import React, { Suspense } from 'react';
+import { ErrorBoundary } from 'react-error-boundary';
 import styled from 'styled-components';
 import AnalysisHeader from './AnalysisHeader/AnalysisHeader';
 import WeeklySummary from './WeeklySummary/WeeklySummary';
@@ -20,16 +21,18 @@ const AnalysisPage = styled.div`
 
 function Analysis() {
   return (
-    <Suspense fallback={<div>로딩중..</div>}>
-      <AnalysisPage>
-        <AnalysisHeader />
-        <WeeklySummary />
-        <CategoryRank />
-        <EmotionRank />
-        <CheeringMe />
-        <CheeringTo />
-      </AnalysisPage>
-    </Suspense>
+    <ErrorBoundary fallback={<div>에러</div>}>
+      <Suspense fallback={<div>로딩중..</div>}>
+        <AnalysisPage>
+          <AnalysisHeader />
+          <WeeklySummary />
+          <CategoryRank />
+          <EmotionRank />
+          <CheeringMe />
+          <CheeringTo />
+        </AnalysisPage>
+      </Suspense>
+    </ErrorBoundary>
   );
 }
 

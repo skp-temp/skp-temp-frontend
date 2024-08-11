@@ -4,8 +4,14 @@ import { GRAY_COLOR } from '../../../constants';
 
 const ItemComponent = styled.div`
   display: flex;
+  flex-direction: column;
+  margin-top: 8px;
+`;
+
+const SummaryItemOne = styled.div`
+  display: flex;
   height: 24px;
-  margin-top: 6px;
+  margin: 4px 0px;
 `;
 
 const SummaryTitle = styled.div`
@@ -42,17 +48,30 @@ const ResultItem = styled.div<{ $bool: string }>`
   height: 22px;
 `;
 
-const tempList = [1, 1, 0, 1, 1, 1, 0];
+const tempItemList = [
+  {
+    title: '매일매일 깃허브 남',
+    list: [1, 1, 0, 1, 1, 1, 0],
+  },
+  {
+    title: '스쿼트 1500개',
+    list: [1, 1, 0, 0, 1, 1, 1],
+  },
+];
 
 const SummaryItem = () => {
   return (
     <ItemComponent>
-      <SummaryTitle>매일 깃허브 남</SummaryTitle>
-      <SummaryResult>
-        {tempList.map((i, idx) => (
-          <ResultItem $bool={i ? '' : 'Null'} key={idx} />
-        ))}
-      </SummaryResult>
+      {tempItemList.map((i, i_idx) => (
+        <SummaryItemOne key={i_idx}>
+          <SummaryTitle>{i.title}</SummaryTitle>
+          <SummaryResult>
+            {i.list.map((j, j_idx) => (
+              <ResultItem $bool={j ? '' : 'Null'} key={j_idx} />
+            ))}
+          </SummaryResult>
+        </SummaryItemOne>
+      ))}
     </ItemComponent>
   );
 };

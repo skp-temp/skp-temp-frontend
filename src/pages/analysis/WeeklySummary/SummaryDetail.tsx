@@ -21,7 +21,7 @@ const DetailComponent = styled.div`
   width: auto;
   height: auto;
   border-radius: 16px;
-  padding: 28px 15px 34px 15px;
+  padding: 28px 16px 28px 16px;
 `;
 
 function SummaryDetail() {

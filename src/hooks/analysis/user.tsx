@@ -19,10 +19,7 @@ export const useUserAnalysis = () => {
 
   const fetchUserAnalysis = async () => {
     if (cookies.get('jwt')) {
-      return await GET_API(
-        'Bearer ' + cookies.get('jwt'),
-        BASE_URL_DEV + '/statistics/user',
-      );
+      return await GET_API('Bearer ' + cookies.get('jwt'), '/statistics/user');
     } else {
       return console.log('error');
     }

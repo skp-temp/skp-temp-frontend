@@ -12,7 +12,7 @@ const ItemComponent = styled.div`
   display: flex;
   margin-bottom: 14px;
   align-items: center;
-  padding: 0 30px 0 30px;
+  padding: 0 22px 0 22px;
 `;
 const CategoryImage = styled.div<{ $categoryName: string }>`
   background-image: url('images/analysis/${(props) =>

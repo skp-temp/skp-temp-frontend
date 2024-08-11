@@ -18,7 +18,7 @@ const CategoryRank1: categoryInfo[] = [
     rank: 1,
     categoryName: 'workout',
     categoryNameKr: '운동',
-    categoryCount: 38,
+    categoryCount: 100,
   },
   {
     rank: 2,

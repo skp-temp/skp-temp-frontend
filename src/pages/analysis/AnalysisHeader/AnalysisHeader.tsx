@@ -66,7 +66,7 @@ const TextRight = styled.div`
 `;
 
 function AnalysisHeader() {
-  const { isPending, error, data } = useUserAnalysis();
+  // const { isPending, error, data } = useUserAnalysis();
 
   return (
     <>
@@ -75,7 +75,8 @@ function AnalysisHeader() {
         <HeaderTextBox>
           <TextTop>부키와 함께 한 지</TextTop>
           <TextBottom>
-            <TextLeft>{data?.result.userDays}</TextLeft>
+            {/* <TextLeft>{data?.result.userDays}</TextLeft> */}
+            <TextLeft>{20}</TextLeft>
             <TextRight>일 째</TextRight>
           </TextBottom>
         </HeaderTextBox>

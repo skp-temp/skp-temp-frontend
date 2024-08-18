@@ -1,11 +1,12 @@
 import React from 'react';
 import styled from 'styled-components';
 import EmotionRankItem from './EmotionRankItem';
-import { GRAY_COLOR } from '../../../constants';
+import { GRAY_COLOR, CategoryType } from '../../../constants';
 
 export type categoryEmotionType = {
-  categoryName: string;
+  categoryName: CategoryType;
   emotionCounts: number[];
+  emotion: string[];
 };
 
 const DetailComponent = styled.div`
@@ -25,39 +26,47 @@ const DetailItems = styled.div`
 `;
 const categoryEmotions1: categoryEmotionType[] = [
   {
-    categoryName: '운동',
+    categoryName: 'WORKOUT',
     emotionCounts: [6, 2],
+    emotion: ['MAD', 'SAD'],
   },
   {
-    categoryName: '금전',
+    categoryName: 'MONEY',
     emotionCounts: [6, 2],
+    emotion: ['HAPPY', 'SOSO'],
   },
   {
-    categoryName: '식습관',
+    categoryName: 'DIET',
     emotionCounts: [6, 2],
+    emotion: ['MAD', 'HAPPY'],
   },
   {
-    categoryName: '뷰티',
+    categoryName: 'BEAUTY',
     emotionCounts: [6, 2],
+    emotion: ['SOSO', 'MAD'],
   },
 ];
 
 const categoryEmotions2: categoryEmotionType[] = [
   {
-    categoryName: '행복',
+    categoryName: 'HAPPINESS',
     emotionCounts: [6, 2],
+    emotion: ['LOVELY', 'SAD'],
   },
   {
-    categoryName: '공부',
-    emotionCounts: [6, 2],
+    categoryName: 'STUDY',
+    emotionCounts: [0, 0],
+    emotion: [],
   },
   {
-    categoryName: '갓생',
-    emotionCounts: [6, 2],
+    categoryName: 'HUSTLE',
+    emotionCounts: [6, 0],
+    emotion: ['SOSO'],
   },
   {
-    categoryName: '반려',
+    categoryName: 'PET',
     emotionCounts: [6, 2],
+    emotion: ['LOVELY', 'LOVELY'],
   },
 ];
 

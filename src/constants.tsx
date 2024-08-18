@@ -47,7 +47,7 @@ export const THEME_COLOR = {
     '300': '#DD7EE4',
     '400': '#A600AF',
   } as const,
-  HAPPY: {
+  HAPPINESS: {
     '100': '#F3FFDF',
     '200': '#BAF59F',
     '300': '#648961',
@@ -80,7 +80,7 @@ export const CATEGORY_OBJECT = {
   MONEY: '금전',
   DIET: '식습관',
   BEAUTY: '뷰티',
-  HAPPY: '행복',
+  HAPPINESS: '행복',
   STUDY: '공부',
   HUSTLE: '갓생',
   PET: '반려동물',
@@ -91,7 +91,7 @@ export const CATEGORY_LIST: CategoryType[] = [
   'MONEY',
   'DIET',
   'BEAUTY',
-  'HAPPY',
+  'HAPPINESS',
   'STUDY',
   'HUSTLE',
   'PET',
@@ -109,7 +109,7 @@ export type CategoryType =
   | 'MONEY'
   | 'DIET'
   | 'BEAUTY'
-  | 'HAPPY'
+  | 'HAPPINESS'
   | 'STUDY'
   | 'HUSTLE'
   | 'PET';

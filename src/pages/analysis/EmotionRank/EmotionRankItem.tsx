@@ -1,7 +1,7 @@
 import React from 'react';
 import styled from 'styled-components';
 import { categoryEmotionType } from './EmotionRankDetail';
-import { SEMANTIC_COLOR } from '../../../constants';
+import { SEMANTIC_COLOR, CATEGORY_OBJECT } from '../../../constants';
 
 const RankItemComponent = styled.div`
   display: flex;
@@ -32,11 +32,12 @@ const FirstRank = styled.div`
   justify-content: space-between;
 `;
 
-const FirstRankImage = styled.div`
-  background-image: url('images/analysis/CategoryEmotion.png');
+const FirstRankImage = styled.div<{ $category: string; $emotion: string }>`
+  background-image: url('images/analysis/rank/${(props) =>
+    props.$category}_large_${(props) => props.$emotion}.png');
   background-size: cover;
   width: 40px;
-  height: 39px;
+  height: 40px;
   margin-bottom: 5px;
 `;
 
@@ -64,15 +65,16 @@ const SecondRankImageComponent = styled.div`
   justify-content: center;
   align-items: center;
   width: 40px;
-  height: 38px;
+  height: 40px;
   margin-bottom: 5px;
 `;
 
-const SecondRankImage = styled.div`
-  background-image: url('images/analysis/CategoryEmotion.png');
+const SecondRankImage = styled.div<{ $category: string; $emotion: string }>`
+  background-image: url('images/analysis/rank/${(props) =>
+    props.$category}_small_${(props) => props.$emotion}.png');
   background-size: cover;
-  width: 28px;
-  height: 27px;
+  width: 40px;
+  height: 40px;
 `;
 
 const SecondRankText = styled.div`
@@ -89,15 +91,32 @@ const SecondRankText = styled.div`
 function EmotionRankItem(props: { info: categoryEmotionType }) {
   return (
     <RankItemComponent>
-      <CategoryName>{props.info.categoryName}</CategoryName>
+      <CategoryName>{CATEGORY_OBJECT[props.info.categoryName]}</CategoryName>
       <CategoryComponent>
         <FirstRank>
-          <FirstRankImage />
+          {props.info.emotionCounts[0] !== 0 ? (
+            <FirstRankImage
+              $category={props.info.categoryName.toLowerCase()}
+              $emotion={props.info.emotion[0].toLowerCase()}
+            />
+          ) : (
+            <FirstRankImage
+              $category={props.info.categoryName.toLowerCase()}
+              $emotion={'gray'}
+            />
+          )}
           <FirstRankText>{props.info.emotionCounts[0]}</FirstRankText>
         </FirstRank>
         <SecondRank>
           <SecondRankImageComponent>
-            <SecondRankImage />
+            {props.info.emotion.length === 2 ? (
+              <SecondRankImage
+                $category={props.info.categoryName.toLowerCase()}
+                $emotion={props.info.emotion[1].toLowerCase()}
+              />
+            ) : (
+              <SecondRankImage $category={'null'} $emotion={'null'} />
+            )}
           </SecondRankImageComponent>
           <SecondRankText>{props.info.emotionCounts[1]}</SecondRankText>
         </SecondRank>
